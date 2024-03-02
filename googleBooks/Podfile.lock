@@ -1,0 +1,36 @@
+PODS:
+  - EDToolKit (5.0.0):
+    - SDWebImage
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - SDWebImage (5.19.0):
+    - SDWebImage/Core (= 5.19.0)
+  - SDWebImage/Core (5.19.0)
+
+DEPENDENCIES:
+  - EDToolKit
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - EDToolKit
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  EDToolKit: 0fae0221696ad70eb7aa828d493a48cdb1bec41f
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
+
+PODFILE CHECKSUM: 24324cbedf5ad94450e416ed0f778e32c6bf398d
+
+COCOAPODS: 1.15.2
