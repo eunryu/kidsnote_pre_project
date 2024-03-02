@@ -14,11 +14,23 @@ class BaseView: UIViewController {
     var mainHeight: CGFloat = 0
     var mainV:  UIView!
     
+    let autoKit = AutoLayoutKit.shared
+    let safeKit = SafeLayoutManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    /** personal function */
+    func initView() {
+        
     }
 }
