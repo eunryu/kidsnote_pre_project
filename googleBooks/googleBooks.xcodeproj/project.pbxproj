@@ -11,6 +11,11 @@
 		92592138EEB083B7CADD217C /* Pods_googleBooks_googleBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70C594D2E9CE5A1C6A259AB /* Pods_googleBooks_googleBooksUITests.framework */; };
 		B3CE44B657B8FB59E888898C /* Pods_googleBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CA469496B1E8B37341833D /* Pods_googleBooks.framework */; };
 		DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AB2B934A0600650C5E /* BaseView.swift */; };
+		DE6392B02B93772F00650C5E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AF2B93772F00650C5E /* Documentation.docc */; };
+		DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B32B93780500650C5E /* AboutHttp.swift */; };
+		DE6392B62B93781E00650C5E /* TypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B52B93781E00650C5E /* TypeManager.swift */; };
+		DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B72B9378DC00650C5E /* CommonItem.swift */; };
+		DE6392BA2B93793800650C5E /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B92B93793800650C5E /* ToolManager.swift */; };
 		DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2AD2B934732003147A5 /* AppDelegate.swift */; };
 		DE77D2B22B934732003147A5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2B12B934732003147A5 /* SearchView.swift */; };
 		DE77D2B52B934732003147A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77D2B32B934732003147A5 /* Main.storyboard */; };
@@ -49,6 +54,11 @@
 		B5E1799E0F52FA8C72F04AC1 /* Pods-googleBooks-googleBooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooks-googleBooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-googleBooks-googleBooksUITests/Pods-googleBooks-googleBooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C97624D2B52E63F30493767D /* Pods-googleBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooksTests.release.xcconfig"; path = "Target Support Files/Pods-googleBooksTests/Pods-googleBooksTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE6392AB2B934A0600650C5E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		DE6392AF2B93772F00650C5E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = Documentation.docc; path = googleBooks/Documentation.docc; sourceTree = SOURCE_ROOT; };
+		DE6392B32B93780500650C5E /* AboutHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHttp.swift; sourceTree = "<group>"; };
+		DE6392B52B93781E00650C5E /* TypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeManager.swift; sourceTree = "<group>"; };
+		DE6392B72B9378DC00650C5E /* CommonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonItem.swift; sourceTree = "<group>"; };
+		DE6392B92B93793800650C5E /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
 		DE77D2AA2B934732003147A5 /* googleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77D2AD2B934732003147A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE77D2B12B934732003147A5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DE6392AB2B934A0600650C5E /* BaseView.swift */,
+				DE6392B72B9378DC00650C5E /* CommonItem.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -123,6 +134,23 @@
 				DE77D2B12B934732003147A5 /* SearchView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		DE6392B12B9377D400650C5E /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				DE6392B52B93781E00650C5E /* TypeManager.swift */,
+				DE6392B92B93793800650C5E /* ToolManager.swift */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		DE6392B22B9377DB00650C5E /* items */ = {
+			isa = PBXGroup;
+			children = (
+				DE6392B32B93780500650C5E /* AboutHttp.swift */,
+			);
+			path = items;
 			sourceTree = "<group>";
 		};
 		DE77D2A12B934732003147A5 = {
@@ -150,6 +178,9 @@
 		DE77D2AC2B934732003147A5 /* googleBooks */ = {
 			isa = PBXGroup;
 			children = (
+				DE6392B22B9377DB00650C5E /* items */,
+				DE6392B12B9377D400650C5E /* tools */,
+				DE6392AF2B93772F00650C5E /* Documentation.docc */,
 				DE6392AE2B934A2B00650C5E /* views */,
 				DE6392AD2B934A1C00650C5E /* storyboard */,
 				DE6392AA2B9349FA00650C5E /* base */,
@@ -441,6 +472,11 @@
 				DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */,
 				DE77D2B22B934732003147A5 /* SearchView.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
+				DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */,
+				DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */,
+				DE6392BA2B93793800650C5E /* ToolManager.swift in Sources */,
+				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
+				DE6392B62B93781E00650C5E /* TypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
