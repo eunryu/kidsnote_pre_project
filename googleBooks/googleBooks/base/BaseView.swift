@@ -17,8 +17,19 @@ class BaseView: UIViewController {
     let autoKit = AutoLayoutKit.shared
     let safeKit = SafeLayoutManager.shared
     
+    var isFirst: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainV = self.view
+        mainV.frame = self.view.bounds
+        
+        mainWidth = self.view.frame.width
+        mainHeight = self.view.frame.height
+        
+        self.initView()
+        self.initModel()
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,10 +38,33 @@ class BaseView: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if isFirst {
+            self.firstAction()
+            isFirst = false
+        } else {
+            self.viewReloadAction()
+        }
     }
     
     /** personal function */
+    // 뷰 초기화
     func initView() {
+        
+    }
+    
+    // 모델
+    func initModel() {
+        
+    }
+    
+    // 뷰 들어와서 하는 액션
+    func firstAction() {
+        
+    }
+    
+    // 뷰 리로드 액션
+    func viewReloadAction() {
         
     }
 }
