@@ -35,6 +35,7 @@
 		DE77D2C52B934734003147A5 /* googleBooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2C42B934734003147A5 /* googleBooksTests.swift */; };
 		DE77D2CF2B934734003147A5 /* googleBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2CE2B934734003147A5 /* googleBooksUITests.swift */; };
 		DE77D2D12B934734003147A5 /* googleBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */; };
+		DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		DE77D2CA2B934734003147A5 /* googleBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77D2CE2B934734003147A5 /* googleBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBooksUITests.swift; sourceTree = "<group>"; };
 		DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAudioCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D33715A52B95ADD300792BE1 /* SearchListCell.swift */,
+				DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */,
 				D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */,
 				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
+				DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */,
 				DE6392B62B93781E00650C5E /* TypeManager.swift in Sources */,
 				D33715952B95A76200792BE1 /* MakeUIViewKit.swift in Sources */,
 				D337159B2B95A7B600792BE1 /* Extensions.swift in Sources */,
