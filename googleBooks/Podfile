@@ -6,7 +6,6 @@ target 'googleBooks' do
   use_frameworks!
 
   # Pods for googleBooks
-  pod 'EDToolKit'
   pod 'RxSwift'
   pod 'RxCocoa'
 

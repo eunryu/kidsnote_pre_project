@@ -10,6 +10,17 @@
 		8B6A85499583E93D77C53C10 /* Pods_googleBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382FBE9DE3B34C33EC60C609 /* Pods_googleBooksTests.framework */; };
 		92592138EEB083B7CADD217C /* Pods_googleBooks_googleBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70C594D2E9CE5A1C6A259AB /* Pods_googleBooks_googleBooksUITests.framework */; };
 		B3CE44B657B8FB59E888898C /* Pods_googleBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CA469496B1E8B37341833D /* Pods_googleBooks.framework */; };
+		D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */; };
+		D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715912B95978500792BE1 /* SafeLayoutManager.swift */; };
+		D33715952B95A76200792BE1 /* MakeUIViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715942B95A76200792BE1 /* MakeUIViewKit.swift */; };
+		D33715972B95A77700792BE1 /* MakeUILabelKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715962B95A77700792BE1 /* MakeUILabelKit.swift */; };
+		D33715992B95A79000792BE1 /* MakeUITextViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715982B95A79000792BE1 /* MakeUITextViewKit.swift */; };
+		D337159B2B95A7B600792BE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337159A2B95A7B600792BE1 /* Extensions.swift */; };
+		D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337159C2B95A80B00792BE1 /* MakeUIButtonKit.swift */; };
+		D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A12B95AD2B00792BE1 /* MakeUITableViewKit.swift */; };
+		D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A52B95ADD300792BE1 /* SearchListCell.swift */; };
+		D33715A82B95BA7900792BE1 /* MakeUIImageViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */; };
+		D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A92B95BE7800792BE1 /* TabMenuButton.swift */; };
 		DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AB2B934A0600650C5E /* BaseView.swift */; };
 		DE6392B02B93772F00650C5E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AF2B93772F00650C5E /* Documentation.docc */; };
 		DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B32B93780500650C5E /* AboutHttp.swift */; };
@@ -53,6 +64,17 @@
 		A70C594D2E9CE5A1C6A259AB /* Pods_googleBooks_googleBooksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_googleBooks_googleBooksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1799E0F52FA8C72F04AC1 /* Pods-googleBooks-googleBooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooks-googleBooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-googleBooks-googleBooksUITests/Pods-googleBooks-googleBooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C97624D2B52E63F30493767D /* Pods-googleBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooksTests.release.xcconfig"; path = "Target Support Files/Pods-googleBooksTests/Pods-googleBooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutKit.swift; sourceTree = "<group>"; };
+		D33715912B95978500792BE1 /* SafeLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLayoutManager.swift; sourceTree = "<group>"; };
+		D33715942B95A76200792BE1 /* MakeUIViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIViewKit.swift; sourceTree = "<group>"; };
+		D33715962B95A77700792BE1 /* MakeUILabelKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUILabelKit.swift; sourceTree = "<group>"; };
+		D33715982B95A79000792BE1 /* MakeUITextViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITextViewKit.swift; sourceTree = "<group>"; };
+		D337159A2B95A7B600792BE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D337159C2B95A80B00792BE1 /* MakeUIButtonKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIButtonKit.swift; sourceTree = "<group>"; };
+		D33715A12B95AD2B00792BE1 /* MakeUITableViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITableViewKit.swift; sourceTree = "<group>"; };
+		D33715A52B95ADD300792BE1 /* SearchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCell.swift; sourceTree = "<group>"; };
+		D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIImageViewKit.swift; sourceTree = "<group>"; };
+		D33715A92B95BE7800792BE1 /* TabMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuButton.swift; sourceTree = "<group>"; };
 		DE6392AB2B934A0600650C5E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		DE6392AF2B93772F00650C5E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = Documentation.docc; path = googleBooks/Documentation.docc; sourceTree = SOURCE_ROOT; };
 		DE6392B32B93780500650C5E /* AboutHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHttp.swift; sourceTree = "<group>"; };
@@ -111,6 +133,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D337158E2B95971700792BE1 /* makeUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D33715932B95A75200792BE1 /* UI */,
+				D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */,
+				D33715912B95978500792BE1 /* SafeLayoutManager.swift */,
+			);
+			path = makeUIKit;
+			sourceTree = "<group>";
+		};
+		D33715932B95A75200792BE1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D33715942B95A76200792BE1 /* MakeUIViewKit.swift */,
+				D33715962B95A77700792BE1 /* MakeUILabelKit.swift */,
+				D33715982B95A79000792BE1 /* MakeUITextViewKit.swift */,
+				D337159C2B95A80B00792BE1 /* MakeUIButtonKit.swift */,
+				D33715A12B95AD2B00792BE1 /* MakeUITableViewKit.swift */,
+				D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D33715A32B95ADBB00792BE1 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D33715A52B95ADD300792BE1 /* SearchListCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		D33715A42B95ADC000792BE1 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				D33715A92B95BE7800792BE1 /* TabMenuButton.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
 		DE6392AA2B9349FA00650C5E /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +192,8 @@
 		DE6392AE2B934A2B00650C5E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D33715A42B95ADC000792BE1 /* component */,
+				D33715A32B95ADBB00792BE1 /* cells */,
 				DE77D2B12B934732003147A5 /* SearchView.swift */,
 			);
 			path = views;
@@ -141,6 +204,7 @@
 			children = (
 				DE6392B52B93781E00650C5E /* TypeManager.swift */,
 				DE6392B92B93793800650C5E /* ToolManager.swift */,
+				D337159A2B95A7B600792BE1 /* Extensions.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -178,9 +242,10 @@
 		DE77D2AC2B934732003147A5 /* googleBooks */ = {
 			isa = PBXGroup;
 			children = (
+				DE6392AF2B93772F00650C5E /* Documentation.docc */,
+				D337158E2B95971700792BE1 /* makeUIKit */,
 				DE6392B22B9377DB00650C5E /* items */,
 				DE6392B12B9377D400650C5E /* tools */,
-				DE6392AF2B93772F00650C5E /* Documentation.docc */,
 				DE6392AE2B934A2B00650C5E /* views */,
 				DE6392AD2B934A1C00650C5E /* storyboard */,
 				DE6392AA2B9349FA00650C5E /* base */,
@@ -469,14 +534,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33715992B95A79000792BE1 /* MakeUITextViewKit.swift in Sources */,
+				D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */,
 				DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */,
 				DE77D2B22B934732003147A5 /* SearchView.swift in Sources */,
+				D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */,
+				D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
 				DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */,
 				DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */,
+				D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */,
+				D33715972B95A77700792BE1 /* MakeUILabelKit.swift in Sources */,
 				DE6392BA2B93793800650C5E /* ToolManager.swift in Sources */,
+				D33715A82B95BA7900792BE1 /* MakeUIImageViewKit.swift in Sources */,
+				D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */,
+				D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */,
 				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
 				DE6392B62B93781E00650C5E /* TypeManager.swift in Sources */,
+				D33715952B95A76200792BE1 /* MakeUIViewKit.swift in Sources */,
+				D337159B2B95A7B600792BE1 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

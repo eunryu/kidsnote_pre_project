@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EDToolKit
 
 class BaseView: UIViewController {
     
