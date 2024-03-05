@@ -15,6 +15,8 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     var tabMenuBorderV: UIView!
     var contentV: UITableView!
     
+    var searchMenuType: TabType = .ebook
+    
     override func initView() {
         super.initView()
         
@@ -31,10 +33,16 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         self.mainV.addSubview(tabMenuV)
         
         // menuBtn
-        let leftBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
-        let rightBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
-        tabMenuV.addArrangedSubview(leftBtn)
-        tabMenuV.addArrangedSubview(rightBtn)
+        let ebookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        let audioBookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        
+        ebookBtn.setTitle(title: "search_tab_title_audiobook".localized)
+        audioBookBtn.setTitle(title: "search_tab_title_ebook".localized)
+        ebookBtn.changeBtnWithState(state: true)
+        audioBookBtn.changeBtnWithState(state: false)
+        
+        tabMenuV.addArrangedSubview(ebookBtn)
+        tabMenuV.addArrangedSubview(audioBookBtn)
         
         tabMenuBorderV = MakeUIViewKit.shared.makeBorderView(borderWidth: mainWidth, borderColor: UIColor.lightGray, addView: self.mainV)
         

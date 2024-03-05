@@ -1,7 +1,28 @@
 {
   "sourceLanguage" : "ko",
   "strings" : {
-
+    "search_tab_title_audiobook" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오디오북"
+          }
+        }
+      }
+    },
+    "search_tab_title_ebook" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "eBook"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

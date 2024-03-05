@@ -12,6 +12,9 @@ extension UIColor {
     static let blk333 = UIColor("#333333")
     static let blk666 = UIColor("#666666")
     static let blk999 = UIColor("#999999")
+    
+    static let borderBottomEnable = UIColor("#1E90FF")
+    static let borderBottomNotEnable = UIColor("#ffffff")
 }
 
 //MARK: String
