@@ -18,7 +18,8 @@ class DetailBookInfoCell: BaseTableViewCell {
     override func initView() {
         super.initView()
         
-        bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 170, height: 240), addView: self)
+        bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
+        bookImgV.backgroundColor = .brown
         
         bookTitleLabel = MakeUILabelKit.shared.makeLabel("타이틀 라벨 테스트", size: CGSize(width: 100, height: 20), addView: self)
         bookTitleLabel.numberOfLines = 0
@@ -33,7 +34,7 @@ class DetailBookInfoCell: BaseTableViewCell {
         let grayBorder = MakeUIViewKit.shared.makeBorderView(borderWidth: 100, borderColor: .borderGray, addView: self)
         
         // autoLayout
-        autoKit.setAutoLayout(30, Trailing: nil, Top: 30, Bottom: 30, Width: 170, Height: 240, TargetView: bookImgV, MainView: self)
+        autoKit.setAutoLayout(30, Trailing: nil, Top: 30, Bottom: 30, Width: 70, Height: 100, TargetView: bookImgV, MainView: self)
         
         autoKit.setAutoLayout(nil, Trailing: 30, Top: 30, Bottom: nil, Width: nil, Height: nil, TargetView: bookTitleLabel, MainView: self)
         autoKit.setViewTerm(30, leftView: bookImgV, rightView: bookTitleLabel, mainView: self)

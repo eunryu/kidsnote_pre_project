@@ -19,3 +19,8 @@ enum TabType {
     case ebook
     case audioBook
 }
+
+enum CustomButtonType {
+    case onlyTitle
+    case imgWithTitle
+}

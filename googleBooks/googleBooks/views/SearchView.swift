@@ -101,5 +101,11 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainST = UIStoryboard(name: "Main", bundle: nil)
+        let detailV = mainST.instantiateViewController(identifier: "DetailView") as! DetailView
+        self.navigationController?.pushViewController(detailV, animated: true)
+    }
 }
 

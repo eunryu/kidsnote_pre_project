@@ -158,6 +158,13 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		D316C29C2B9700460007B4CF /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		D337158E2B95971700792BE1 /* makeUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +281,7 @@
 			children = (
 				DE6392AF2B93772F00650C5E /* Documentation.docc */,
 				D337158E2B95971700792BE1 /* makeUIKit */,
+				D316C29C2B9700460007B4CF /* viewModel */,
 				DE6392B22B9377DB00650C5E /* items */,
 				DE6392B12B9377D400650C5E /* tools */,
 				DE6392AE2B934A2B00650C5E /* views */,
