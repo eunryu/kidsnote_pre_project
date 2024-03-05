@@ -12,6 +12,10 @@
 		B3CE44B657B8FB59E888898C /* Pods_googleBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CA469496B1E8B37341833D /* Pods_googleBooks.framework */; };
 		D316C2902B96ACA50007B4CF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D316C28F2B96ACA50007B4CF /* Localizable.xcstrings */; };
 		D316C2922B96AEB50007B4CF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C2912B96AEB50007B4CF /* DetailView.swift */; };
+		D316C2952B96AEFC0007B4CF /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C2942B96AEFC0007B4CF /* BaseTableViewCell.swift */; };
+		D316C2972B96AF530007B4CF /* DetailBookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C2962B96AF530007B4CF /* DetailBookInfoCell.swift */; };
+		D316C2992B96E0D20007B4CF /* DetailBtnsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C2982B96E0D20007B4CF /* DetailBtnsCell.swift */; };
+		D316C29B2B96E19E0007B4CF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D316C29A2B96E19E0007B4CF /* CustomButton.swift */; };
 		D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */; };
 		D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715912B95978500792BE1 /* SafeLayoutManager.swift */; };
 		D33715952B95A76200792BE1 /* MakeUIViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715942B95A76200792BE1 /* MakeUIViewKit.swift */; };
@@ -71,6 +75,10 @@
 		D316C28E2B96AC990007B4CF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D316C28F2B96ACA50007B4CF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D316C2912B96AEB50007B4CF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D316C2942B96AEFC0007B4CF /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D316C2962B96AF530007B4CF /* DetailBookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookInfoCell.swift; sourceTree = "<group>"; };
+		D316C2982B96E0D20007B4CF /* DetailBtnsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBtnsCell.swift; sourceTree = "<group>"; };
+		D316C29A2B96E19E0007B4CF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutKit.swift; sourceTree = "<group>"; };
 		D33715912B95978500792BE1 /* SafeLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLayoutManager.swift; sourceTree = "<group>"; };
 		D33715942B95A76200792BE1 /* MakeUIViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIViewKit.swift; sourceTree = "<group>"; };
@@ -141,6 +149,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D316C2932B96AEE90007B4CF /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				D316C2962B96AF530007B4CF /* DetailBookInfoCell.swift */,
+				D316C2982B96E0D20007B4CF /* DetailBtnsCell.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		D337158E2B95971700792BE1 /* makeUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +184,7 @@
 		D33715A32B95ADBB00792BE1 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				D316C2932B96AEE90007B4CF /* detail */,
 				D33715A52B95ADD300792BE1 /* SearchListCell.swift */,
 				DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */,
 			);
@@ -177,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D33715A92B95BE7800792BE1 /* TabMenuButton.swift */,
+				D316C29A2B96E19E0007B4CF /* CustomButton.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -186,6 +205,7 @@
 			children = (
 				DE6392AB2B934A0600650C5E /* BaseView.swift */,
 				DE6392B72B9378DC00650C5E /* CommonItem.swift */,
+				D316C2942B96AEFC0007B4CF /* BaseTableViewCell.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -550,10 +570,13 @@
 				D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */,
 				DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */,
 				DE77D2B22B934732003147A5 /* SearchView.swift in Sources */,
+				D316C29B2B96E19E0007B4CF /* CustomButton.swift in Sources */,
 				D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */,
 				D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
 				DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */,
+				D316C2972B96AF530007B4CF /* DetailBookInfoCell.swift in Sources */,
+				D316C2992B96E0D20007B4CF /* DetailBtnsCell.swift in Sources */,
 				DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */,
 				D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */,
 				D316C2922B96AEB50007B4CF /* DetailView.swift in Sources */,
@@ -562,6 +585,7 @@
 				D33715A82B95BA7900792BE1 /* MakeUIImageViewKit.swift in Sources */,
 				D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */,
 				D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */,
+				D316C2952B96AEFC0007B4CF /* BaseTableViewCell.swift in Sources */,
 				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
 				DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */,
 				DE6392B62B93781E00650C5E /* TypeManager.swift in Sources */,
