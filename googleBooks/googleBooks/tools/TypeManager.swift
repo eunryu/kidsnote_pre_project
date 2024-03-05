@@ -14,3 +14,8 @@ enum ApiType: String {
 enum PathType: String {
     case none = ""
 }
+
+enum TabType {
+    case ebook
+    case audioBook
+}

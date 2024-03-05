@@ -10,6 +10,7 @@
 		8B6A85499583E93D77C53C10 /* Pods_googleBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382FBE9DE3B34C33EC60C609 /* Pods_googleBooksTests.framework */; };
 		92592138EEB083B7CADD217C /* Pods_googleBooks_googleBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70C594D2E9CE5A1C6A259AB /* Pods_googleBooks_googleBooksUITests.framework */; };
 		B3CE44B657B8FB59E888898C /* Pods_googleBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CA469496B1E8B37341833D /* Pods_googleBooks.framework */; };
+		D316C2902B96ACA50007B4CF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D316C28F2B96ACA50007B4CF /* Localizable.xcstrings */; };
 		D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */; };
 		D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715912B95978500792BE1 /* SafeLayoutManager.swift */; };
 		D33715952B95A76200792BE1 /* MakeUIViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715942B95A76200792BE1 /* MakeUIViewKit.swift */; };
@@ -65,6 +66,9 @@
 		A70C594D2E9CE5A1C6A259AB /* Pods_googleBooks_googleBooksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_googleBooks_googleBooksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1799E0F52FA8C72F04AC1 /* Pods-googleBooks-googleBooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooks-googleBooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-googleBooks-googleBooksUITests/Pods-googleBooks-googleBooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C97624D2B52E63F30493767D /* Pods-googleBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleBooksTests.release.xcconfig"; path = "Target Support Files/Pods-googleBooksTests/Pods-googleBooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		D316C28D2B96AC980007B4CF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		D316C28E2B96AC990007B4CF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D316C28F2B96ACA50007B4CF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D337158F2B95976D00792BE1 /* AutoLayoutKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutKit.swift; sourceTree = "<group>"; };
 		D33715912B95978500792BE1 /* SafeLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeLayoutManager.swift; sourceTree = "<group>"; };
 		D33715942B95A76200792BE1 /* MakeUIViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIViewKit.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				DE77D2B62B934734003147A5 /* Assets.xcassets */,
 				DE77D2B82B934734003147A5 /* LaunchScreen.storyboard */,
 				DE77D2BB2B934734003147A5 /* Info.plist */,
+				D316C28F2B96ACA50007B4CF /* Localizable.xcstrings */,
 			);
 			path = supportFiles;
 			sourceTree = "<group>";
@@ -384,11 +389,11 @@
 			};
 			buildConfigurationList = DE77D2A52B934732003147A5 /* Build configuration list for PBXProject "googleBooks" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ko,
 			);
 			mainGroup = DE77D2A12B934732003147A5;
 			productRefGroup = DE77D2AB2B934732003147A5 /* Products */;
@@ -409,6 +414,7 @@
 			files = (
 				DE77D2BA2B934734003147A5 /* LaunchScreen.storyboard in Resources */,
 				DE77D2B72B934734003147A5 /* Assets.xcassets in Resources */,
+				D316C2902B96ACA50007B4CF /* Localizable.xcstrings in Resources */,
 				DE77D2B52B934732003147A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +603,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DE77D2B42B934732003147A5 /* Base */,
+				D316C28D2B96AC980007B4CF /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -605,6 +612,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DE77D2B92B934734003147A5 /* Base */,
+				D316C28E2B96AC990007B4CF /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +625,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -680,6 +689,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

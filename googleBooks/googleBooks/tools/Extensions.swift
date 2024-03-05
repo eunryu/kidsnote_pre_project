@@ -5,8 +5,14 @@
 //  Created by 김현지 on 3/4/24.
 //
 
-import Foundation
 import UIKit
+import UIColor_Hex_Swift
+
+extension UIColor {
+    static let blk333 = UIColor("#333333")
+    static let blk666 = UIColor("#666666")
+    static let blk999 = UIColor("#999999")
+}
 
 //MARK: String
 public extension String{

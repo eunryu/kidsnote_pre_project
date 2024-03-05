@@ -16,36 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCC-Zd-oxw">
-                                <rect key="frame" x="175.66666666666666" y="428" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Qag-Up-eEK"/>
-                                    <constraint firstAttribute="width" constant="42" id="sfl-MC-Kes"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewo-FZ-cTE">
-                                <rect key="frame" x="175.66666666666666" y="474" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="H91-KC-UZL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ewo-FZ-cTE" firstAttribute="top" secondItem="nCC-Zd-oxw" secondAttribute="bottom" constant="25" id="Lpp-YI-gzQ"/>
-                            <constraint firstItem="nCC-Zd-oxw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MLe-wR-uaT"/>
-                            <constraint firstItem="nCC-Zd-oxw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="XoQ-55-T9W"/>
-                            <constraint firstItem="ewo-FZ-cTE" firstAttribute="trailing" secondItem="nCC-Zd-oxw" secondAttribute="trailing" id="aJO-yd-Isr"/>
-                            <constraint firstItem="ewo-FZ-cTE" firstAttribute="leading" secondItem="nCC-Zd-oxw" secondAttribute="leading" id="pSH-pG-A3T"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

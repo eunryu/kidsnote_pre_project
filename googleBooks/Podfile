@@ -8,6 +8,7 @@ target 'googleBooks' do
   # Pods for googleBooks
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'UIColor_Hex_Swift'
 
   target 'googleBooksTests' do
     inherit! :search_paths

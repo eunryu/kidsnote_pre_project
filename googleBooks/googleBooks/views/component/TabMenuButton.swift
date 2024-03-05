@@ -17,10 +17,13 @@ class TabMenuButton: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        tabMenuLabel = MakeUILabelKit.shared.makeLabel("메뉴테스트", size: CGSize(width: 10, height: 30), addView: self)
+        tabMenuLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 10, height: 30), addView: self)
         MakeUILabelKit.shared.textDecoration(tabMenuLabel, fontSize: 14, fontName: nil, color: UIColor.black, alignment: .center)
         
         tabBorderView = MakeUIViewKit.shared.makeView(size: CGSize(width: 20, height: 5), background: UIColor.black)
+        tabBorderView.layer.cornerRadius = 4
+        tabBorderView.layer.masksToBounds = true
+        self.addSubview(tabBorderView)
         
         autoKit.EqualHeight(tabMenuLabel, Height: 30)
         autoKit.setWidthNotEqualSize(targetView: tabMenuLabel, standardSize: 10, isBig: true)
@@ -28,10 +31,24 @@ class TabMenuButton: UIView {
         
         autoKit.Bottom(tabBorderView, MainView: self, BottomSize: 0)
         autoKit.EqualHeight(tabBorderView, Height: 5)
-        
+        autoKit.equalViewLeadTrail(targetView: tabBorderView, standardView: tabMenuLabel, mainView: self)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setTitle(title: String) {
+        
+    }
+    
+    func changeBtnWithState(state: Bool) {
+        if state {
+            tabMenuLabel.textColor = UIColor.blk333
+            tabBorderView.backgroundColor = UIColor.blk333
+        } else {
+            tabMenuLabel.textColor = UIColor.blk666
+            tabBorderView.backgroundColor = UIColor.white
+        }
     }
 }

@@ -26,8 +26,15 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         
         tabMenuV = UIStackView(frame: CGRect(x: 0, y: 0, width: mainWidth, height: 60))
         tabMenuV.translatesAutoresizingMaskIntoConstraints = false
-        tabMenuV.backgroundColor = .brown
+        tabMenuV.axis = .horizontal
+        tabMenuV.distribution = .fillEqually
         self.mainV.addSubview(tabMenuV)
+        
+        // menuBtn
+        let leftBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        let rightBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        tabMenuV.addArrangedSubview(leftBtn)
+        tabMenuV.addArrangedSubview(rightBtn)
         
         tabMenuBorderV = MakeUIViewKit.shared.makeBorderView(borderWidth: mainWidth, borderColor: UIColor.lightGray, addView: self.mainV)
         
