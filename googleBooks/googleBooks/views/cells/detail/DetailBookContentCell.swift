@@ -26,7 +26,10 @@ class DetailBookContentCell: BaseTableViewCell {
         
         autoKit.setAutoLayout(16, Trailing: 16, Top: 20, Bottom: nil, Width: nil, Height: 25, TargetView: titleLabel, MainView: self)
         autoKit.setAutoLayout(16, Trailing: 16, Top: nil, Bottom: 20, Width: nil, Height: nil, TargetView: contentLabel, MainView: self)
-        autoKit.setHeightNotEqualSize(targetView: contentLabel, standardSize: 80, isBig: true)
+        autoKit.setHeightNotEqualSize(targetView: contentLabel, standardSize: 0, isBig: true)
         autoKit.setViewTerm(10, topView: titleLabel, bottomView: contentLabel, mainView: self)
+        
+        let bottomBorder = MakeUIViewKit.shared.makeBorderView(borderWidth: 100, borderColor: .borderGray, addView: self)
+        autoKit.setAutoLayout(0, Trailing: 0, Top: nil, Bottom: 0, Width: nil, Height: 1, TargetView: bottomBorder, MainView: self)
     }
 }
