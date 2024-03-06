@@ -17,6 +17,7 @@ extension UIColor {
     static let borderBottomNotEnable = UIColor("#ffffff")
     
     static let borderGray = UIColor("#e0dfe1")
+    static let contentGray = UIColor("#999a9d")
 }
 
 //MARK: String

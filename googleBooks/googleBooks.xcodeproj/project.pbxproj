@@ -27,6 +27,9 @@
 		D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A52B95ADD300792BE1 /* SearchListCell.swift */; };
 		D33715A82B95BA7900792BE1 /* MakeUIImageViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */; };
 		D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A92B95BE7800792BE1 /* TabMenuButton.swift */; };
+		D3EDA33A2B9859A300A63EC3 /* DetailBookContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA3392B9859A300A63EC3 /* DetailBookContentCell.swift */; };
+		D3EDA33C2B985C7200A63EC3 /* DetailStarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA33B2B985C7200A63EC3 /* DetailStarInfoCell.swift */; };
+		D3EDA33E2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA33D2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift */; };
 		DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AB2B934A0600650C5E /* BaseView.swift */; };
 		DE6392B02B93772F00650C5E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AF2B93772F00650C5E /* Documentation.docc */; };
 		DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B32B93780500650C5E /* AboutHttp.swift */; };
@@ -90,6 +93,9 @@
 		D33715A52B95ADD300792BE1 /* SearchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListCell.swift; sourceTree = "<group>"; };
 		D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUIImageViewKit.swift; sourceTree = "<group>"; };
 		D33715A92B95BE7800792BE1 /* TabMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuButton.swift; sourceTree = "<group>"; };
+		D3EDA3392B9859A300A63EC3 /* DetailBookContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookContentCell.swift; sourceTree = "<group>"; };
+		D3EDA33B2B985C7200A63EC3 /* DetailStarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarInfoCell.swift; sourceTree = "<group>"; };
+		D3EDA33D2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCreatorInfoCell.swift; sourceTree = "<group>"; };
 		DE6392AB2B934A0600650C5E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		DE6392AF2B93772F00650C5E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = Documentation.docc; path = googleBooks/Documentation.docc; sourceTree = SOURCE_ROOT; };
 		DE6392B32B93780500650C5E /* AboutHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHttp.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 			children = (
 				D316C2962B96AF530007B4CF /* DetailBookInfoCell.swift */,
 				D316C2982B96E0D20007B4CF /* DetailBtnsCell.swift */,
+				D3EDA3392B9859A300A63EC3 /* DetailBookContentCell.swift */,
+				D3EDA33B2B985C7200A63EC3 /* DetailStarInfoCell.swift */,
+				D3EDA33D2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -579,6 +588,7 @@
 				DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */,
 				DE77D2B22B934732003147A5 /* SearchView.swift in Sources */,
 				D316C29B2B96E19E0007B4CF /* CustomButton.swift in Sources */,
+				D3EDA33A2B9859A300A63EC3 /* DetailBookContentCell.swift in Sources */,
 				D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */,
 				D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
@@ -586,6 +596,7 @@
 				D316C2972B96AF530007B4CF /* DetailBookInfoCell.swift in Sources */,
 				D316C2992B96E0D20007B4CF /* DetailBtnsCell.swift in Sources */,
 				DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */,
+				D3EDA33C2B985C7200A63EC3 /* DetailStarInfoCell.swift in Sources */,
 				D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */,
 				D316C2922B96AEB50007B4CF /* DetailView.swift in Sources */,
 				D33715972B95A77700792BE1 /* MakeUILabelKit.swift in Sources */,
@@ -593,6 +604,7 @@
 				D33715A82B95BA7900792BE1 /* MakeUIImageViewKit.swift in Sources */,
 				D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */,
 				D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */,
+				D3EDA33E2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift in Sources */,
 				D316C2952B96AEFC0007B4CF /* BaseTableViewCell.swift in Sources */,
 				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
 				DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */,
