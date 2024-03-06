@@ -17,6 +17,9 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         contentV = MakeUITableViewKit.shared.makeTableView(size: CGSize(width: mainWidth, height: mainHeight), addView:self.mainV)
         contentV.register(DetailBookInfoCell.self, forCellReuseIdentifier: "DetailBookInfoCell")
         contentV.register(DetailBtnsCell.self, forCellReuseIdentifier: "DetailBtnsCell")
+        contentV.register(DetailBookContentCell.self, forCellReuseIdentifier: "DetailBookContentCell")
+        contentV.register(DetailStarInfoCell.self, forCellReuseIdentifier: "DetailStarInfoCell")
+        contentV.register(DetailCreatorInfoCell.self, forCellReuseIdentifier: "DetailCreatorInfoCell")
         contentV.separatorStyle = .none
         
         contentV.delegate = self
@@ -43,7 +46,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,9 +54,21 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             let cell: DetailBookInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailBookInfoCell") as! DetailBookInfoCell
             cell.selectionStyle = .none
             return cell
+        } else if indexPath.row == 1 {
+            let cell: DetailBtnsCell = tableView.dequeueReusableCell(withIdentifier: "DetailBtnsCell") as! DetailBtnsCell
+            cell.selectionStyle = .none
+            return cell
+        } else if indexPath.row == 2 {
+            let cell: DetailBookContentCell = tableView.dequeueReusableCell(withIdentifier: "DetailBookContentCell") as! DetailBookContentCell
+            cell.selectionStyle = .none
+            return cell
+        } else if indexPath.row == 3 {
+            let cell: DetailStarInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailStarInfoCell") as! DetailStarInfoCell
+            cell.selectionStyle = .none
+            return cell
         }
         
-        let cell: DetailBtnsCell = tableView.dequeueReusableCell(withIdentifier: "DetailBtnsCell") as! DetailBtnsCell
+        let cell: DetailCreatorInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailCreatorInfoCell") as! DetailCreatorInfoCell
         cell.selectionStyle = .none
         return cell
     }

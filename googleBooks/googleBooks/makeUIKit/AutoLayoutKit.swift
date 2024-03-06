@@ -228,6 +228,10 @@ open class AutoLayoutKit {
         mainView.addConstraint(NSLayoutConstraint(item: targetView, attribute: .top, relatedBy: .equal, toItem: standardView, attribute: .top, multiplier: 1.0, constant: 0))
     }
     
+    open func equalViewCenterVertical(targetView: AnyObject, standardView: AnyObject, mainView: AnyObject) {
+        mainView.addConstraint(NSLayoutConstraint(item: targetView, attribute: .centerY, relatedBy: .equal, toItem: standardView, attribute: .centerY, multiplier: 1.0, constant: 0))
+    }
+    
     // 왼/오른쪽 같이 적용
     open func equalViewLeadTrail(targetView: AnyObject, standardView: AnyObject, mainView: AnyObject) {
         self.equalViewLeading(targetView: targetView, standardView: standardView, mainView: mainView)
