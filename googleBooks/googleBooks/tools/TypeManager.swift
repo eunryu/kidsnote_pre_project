@@ -37,3 +37,7 @@ enum CustomButtonType {
     case imgWithTitle
 }
 
+enum BlankType {
+    case notLoad
+    case dataBlank
+}

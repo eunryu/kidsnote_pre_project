@@ -26,7 +26,6 @@ class DetailStarInfoCell: BaseTableViewCell {
         arrowV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(resource: .iconArrowRight), size: CGSize(width: 16, height: 16), addView: self)
         
         ratingBox = MakeUIViewKit.shared.makeView(size: CGSize(width: 300, height: 50), background: .white)
-        ratingBox.backgroundColor = .cyan
         self.addSubview(ratingBox)
         
         autoKit.setAutoLayout(16, Trailing: 16, Top: 20, Bottom: nil, Width: nil, Height: 25, TargetView: titleLabel, MainView: self)

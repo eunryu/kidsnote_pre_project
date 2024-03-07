@@ -11,6 +11,10 @@ protocol CallDelegate {
     func callResultAction(resInfo: ResponseData)
 }
 
+protocol LoadImageCallBack {
+    func loadImage(isLoad: Bool, imageData: UIImage?)
+}
+
 class CallManager {
     static let shared = CallManager()
     var callDel: CallDelegate?
@@ -62,6 +66,39 @@ class CallManager {
                     let resType: ApiResultType = .urlError
                     let result = ResponseData(pathType: reqInfo.pathType, resCode: resType.info().code, resMsg: resType.info().msg, dataBody: "")
                     del.callResultAction(resInfo: result)
+                }
+            }
+        }
+    }
+    
+    class func loadImage(imgURL: String, imgV: UIImageView) {
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 20
+        
+        if let url = URL(string: imgURL) {
+            URLSession(configuration: sessionConfig).dataTask(with: URLRequest(url: url)) { imgData, response, error in
+                var loadState: Bool = false
+                var loadData: UIImage? = nil
+                
+                if let resCheck = response as? HTTPURLResponse {
+                    if resCheck.statusCode == 200 {
+                        // 성공
+                        if let data = imgData {
+                            loadData = UIImage(data: data)
+                            loadState = true
+                        } else {
+                            loadState = false
+                        }
+                    } else {
+                        // 실패
+                        loadState = false
+                    }
+                }
+                
+                if loadState, let loadImg = loadData {
+                    DispatchQueue.main.async {
+                        imgV.image = loadImg
+                    }
                 }
             }
         }

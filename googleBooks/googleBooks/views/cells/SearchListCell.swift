@@ -22,7 +22,7 @@ class SearchListCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         titleImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
-        titleImgV.containerDecoration(layerColor: nil, layerWidth: nil, bgColor: UIColor.blue, corner: 10)
+        titleImgV.containerDecoration(layerColor: nil, layerWidth: nil, bgColor: nil, corner: 10)
         
         titleLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 25), addView: self)
         titleLabel.numberOfLines = 2
@@ -58,6 +58,8 @@ class SearchListCell: UITableViewCell {
     }
     
     func initData(item: GoogleBookInfo) {
+        CallManager.loadImage(imgURL: item.titleImgUrl, imgV: self.titleImgV)
+        
         self.titleLabel.text = item.title
         self.writerLabel.text = item.writer
         self.bookCase.text = "eBook"

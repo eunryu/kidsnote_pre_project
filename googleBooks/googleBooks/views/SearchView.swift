@@ -22,6 +22,8 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     var googleBookVM = GoogleBookViewModel()
     var bag = DisposeBag()
     
+    var isFirstLoad: Bool = true
+    
     override func initView() {
         super.initView()
         
@@ -53,6 +55,8 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         
         contentV = MakeUITableViewKit.shared.makeTableView(size: CGSize(width: mainWidth, height: 300), addView: self.mainV)
         contentV.register(SearchListCell.self, forCellReuseIdentifier: "SearchListCell")
+        contentV.register(CmmBlankCell.self, forCellReuseIdentifier: "CmmBlankCell")
+        contentV.showsVerticalScrollIndicator = false
         contentV.delegate = self
         contentV.dataSource = self
         
@@ -85,6 +89,7 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
                 self.listData = itemArray
             }
             
+            self.isFirstLoad = false
             self.contentV.reloadData()
         }.disposed(by: bag)
     }
@@ -104,10 +109,27 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if listData.count == 0 {
+            return 1
+        }
+        
         return listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if listData.count == 0 {
+            let cell: CmmBlankCell = tableView.dequeueReusableCell(withIdentifier: "CmmBlankCell") as! CmmBlankCell
+            cell.selectionStyle = .none
+            
+            var type: BlankType = .dataBlank
+            if isFirstLoad {
+                type = .notLoad
+            }
+            cell.setBlankInfo(type: type)
+            
+            return cell
+        }
+        
         let cell: SearchListCell = tableView.dequeueReusableCell(withIdentifier: "SearchListCell") as! SearchListCell
         cell.initData(item: self.listData[indexPath.row])
         cell.selectionStyle = .none
@@ -115,14 +137,20 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if listData.count == 0 {
+            return 250
+        }
+        
         return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mainST = UIStoryboard(name: "Main", bundle: nil)
-        let detailV = mainST.instantiateViewController(identifier: "DetailView") as! DetailView
-        detailV.bookInfo = listData[indexPath.row]
-        self.navigationController?.pushViewController(detailV, animated: true)
+        if listData.count > 0 {
+            let mainST = UIStoryboard(name: "Main", bundle: nil)
+            let detailV = mainST.instantiateViewController(identifier: "DetailView") as! DetailView
+            detailV.bookInfo = listData[indexPath.row]
+            self.navigationController?.pushViewController(detailV, animated: true)
+        }
     }
 }
 

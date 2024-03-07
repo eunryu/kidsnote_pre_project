@@ -29,6 +29,7 @@
 		D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33715A92B95BE7800792BE1 /* TabMenuButton.swift */; };
 		D36E22822B99962C0051BB09 /* GoogleBookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E22812B99962C0051BB09 /* GoogleBookInfo.swift */; };
 		D36E22842B999C1D0051BB09 /* GoogleBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E22832B999C1D0051BB09 /* GoogleBookViewModel.swift */; };
+		D36E22862B99B4BE0051BB09 /* CmmBlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E22852B99B4BE0051BB09 /* CmmBlankCell.swift */; };
 		D37313682B993FF400E8E87F /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313672B993FF400E8E87F /* CallManager.swift */; };
 		D373136A2B99400B00E8E87F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37313692B99400B00E8E87F /* CacheManager.swift */; };
 		D373136C2B9945FB00E8E87F /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373136B2B9945FB00E8E87F /* ErrorInfo.swift */; };
@@ -100,6 +101,7 @@
 		D33715A92B95BE7800792BE1 /* TabMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuButton.swift; sourceTree = "<group>"; };
 		D36E22812B99962C0051BB09 /* GoogleBookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookInfo.swift; sourceTree = "<group>"; };
 		D36E22832B999C1D0051BB09 /* GoogleBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookViewModel.swift; sourceTree = "<group>"; };
+		D36E22852B99B4BE0051BB09 /* CmmBlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CmmBlankCell.swift; sourceTree = "<group>"; };
 		D37313672B993FF400E8E87F /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		D37313692B99400B00E8E87F /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		D373136B2B9945FB00E8E87F /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				D316C2932B96AEE90007B4CF /* detail */,
 				D33715A52B95ADD300792BE1 /* SearchListCell.swift */,
 				DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */,
+				D36E22852B99B4BE0051BB09 /* CmmBlankCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				DE6392B82B9378DC00650C5E /* CommonItem.swift in Sources */,
 				D3EDA33C2B985C7200A63EC3 /* DetailStarInfoCell.swift in Sources */,
 				D33715902B95976D00792BE1 /* AutoLayoutKit.swift in Sources */,
+				D36E22862B99B4BE0051BB09 /* CmmBlankCell.swift in Sources */,
 				D37313682B993FF400E8E87F /* CallManager.swift in Sources */,
 				D373136C2B9945FB00E8E87F /* ErrorInfo.swift in Sources */,
 				D373136A2B99400B00E8E87F /* CacheManager.swift in Sources */,

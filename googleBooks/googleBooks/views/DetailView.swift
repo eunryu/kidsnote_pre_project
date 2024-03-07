@@ -37,6 +37,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         contentV.register(DetailCreatorInfoCell.self, forCellReuseIdentifier: "DetailCreatorInfoCell")
         contentV.separatorStyle = .none
         contentV.showsVerticalScrollIndicator = false
+        contentV.bounces = false
         
         contentV.delegate = self
         contentV.dataSource = self
