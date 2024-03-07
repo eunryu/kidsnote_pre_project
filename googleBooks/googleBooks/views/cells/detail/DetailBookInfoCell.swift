@@ -50,4 +50,10 @@ class DetailBookInfoCell: BaseTableViewCell {
         
         autoKit.setAutoLayout(0, Trailing: 0, Top: nil, Bottom: 0, Width: nil, Height: 1, TargetView: grayBorder, MainView: self)
     }
+    
+    func initData(data: GoogleBookInfo) {
+        bookTitleLabel.text = data.title
+        bookWriterLabel.text = data.writer
+        bookInfoLabel.text = "eBook/\(data.pageCnt)페이지"
+    }
 }

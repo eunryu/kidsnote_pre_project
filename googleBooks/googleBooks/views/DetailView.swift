@@ -10,6 +10,7 @@ import UIKit
 class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
     var contentV: UITableView!
+    var bookInfo: GoogleBookInfo = GoogleBookInfo()
     
     override func initView() {
         super.initView()
@@ -52,6 +53,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell: DetailBookInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailBookInfoCell") as! DetailBookInfoCell
+            cell.initData(data: bookInfo)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 1 {

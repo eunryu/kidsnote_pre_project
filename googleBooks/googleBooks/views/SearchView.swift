@@ -41,8 +41,8 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         let ebookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
         let audioBookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
         
-        ebookBtn.setTitle(title: "search_tab_title_audiobook".localized)
-        audioBookBtn.setTitle(title: "search_tab_title_ebook".localized)
+        ebookBtn.setTitle(title: "search_tab_title_ebook".localized)
+        audioBookBtn.setTitle(title: "search_tab_title_audiobook".localized)
         ebookBtn.changeBtnWithState(state: true)
         audioBookBtn.changeBtnWithState(state: false)
         
@@ -121,6 +121,7 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainST = UIStoryboard(name: "Main", bundle: nil)
         let detailV = mainST.instantiateViewController(identifier: "DetailView") as! DetailView
+        detailV.bookInfo = listData[indexPath.row]
         self.navigationController?.pushViewController(detailV, animated: true)
     }
 }

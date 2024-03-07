@@ -8,11 +8,21 @@
 import UIKit
 
 class GoogleBookInfo {
+    // 외부
     var bookId: String
     var titleImgUrl: String
     var title: String
     var writer: String
     var  bookType: String
+    
+    // 내부 디테일
+    var pageCnt: Int
+    var rating: Int
+    var ratingCnt: Int
+    var publishedDate: String
+    
+    var shortDescription: String
+    var originDescription: String
     
     init() {
         self.bookId = ""
@@ -20,6 +30,14 @@ class GoogleBookInfo {
         self.title = ""
         self.writer = ""
         self.bookType = ""
+        
+        self.pageCnt = 0
+        self.rating = 0
+        self.ratingCnt = 0
+        self.publishedDate = ""
+        
+        self.shortDescription = ""
+        self.originDescription = ""
     }
     
     init(data: NSDictionary) {
@@ -28,6 +46,14 @@ class GoogleBookInfo {
         self.title = ""
         self.writer = ""
         self.bookType = ""
+        
+        self.pageCnt = 0
+        self.rating = 0
+        self.ratingCnt = 0
+        self.publishedDate = ""
+        
+        self.shortDescription = ""
+        self.originDescription = ""
         
         let bookInfoDic = data.checkBlankDictionary(key: "volumeInfo")
         if bookInfoDic.count > 0 {
@@ -49,10 +75,19 @@ class GoogleBookInfo {
                 self.writer = writerString
             }
             
-            let imgDic = data.checkBlankDictionary(key: "imageLinks")
+            let imgDic = bookInfoDic.checkBlankDictionary(key: "imageLinks")
             if imgDic.count > 0 {
                 self.titleImgUrl = imgDic.checkBlankStringValue(key: "thumbnail", defStr: "")
             }
+            
+            self.pageCnt = bookInfoDic.checkBlankInteger(key: "pageCount")
+            self.rating = bookInfoDic.checkBlankInteger(key: "averageRating")
+            self.ratingCnt = bookInfoDic.checkBlankInteger(key: "ratingsCount")
+            self.publishedDate = bookInfoDic.checkBlankStringValue(key: "publishedDate", defStr: "")
+            
+            let searchInfoDic = bookInfoDic.checkBlankDictionary(key: "searchInfo")
+            self.shortDescription = searchInfoDic.checkBlankStringValue(key: "textSnippet", defStr: "")
+            self.originDescription = bookInfoDic.checkBlankStringValue(key: "description", defStr: "")
         }
     }
 }
