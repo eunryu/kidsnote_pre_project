@@ -25,8 +25,9 @@ class SearchListCell: UITableViewCell {
         titleImgV.containerDecoration(layerColor: nil, layerWidth: nil, bgColor: UIColor.blue, corner: 10)
         
         titleLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 25), addView: self)
-        titleLabel.numberOfLines = 0
-        MakeUILabelKit.shared.textDecoration(titleLabel, fontSize: 16, fontName: nil, color: UIColor.black, alignment: .left)
+        titleLabel.numberOfLines = 2
+        titleLabel.lineBreakMode = .byTruncatingTail
+        MakeUILabelKit.shared.textDecoration(titleLabel, fontSize: 15, fontName: nil, color: UIColor.black, alignment: .left)
         
         writerLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 15), addView: self)
         MakeUILabelKit.shared.textDecoration(writerLabel, fontSize: 12, fontName: nil, color: UIColor.gray, alignment: .left)
@@ -35,19 +36,19 @@ class SearchListCell: UITableViewCell {
         MakeUILabelKit.shared.textDecoration(bookCase, fontSize: 12, fontName: nil, color: UIColor.gray, alignment: .left)
         
         // autoLayout
-        autoKit.setAutoLayout(30, Trailing: nil, Top: 14, Bottom: 14, Width: 70, Height: 100, TargetView: titleImgV, MainView: self)
+        autoKit.setAutoLayout(20, Trailing: nil, Top: 14, Bottom: 14, Width: 70, Height: 100, TargetView: titleImgV, MainView: self)
         
-        autoKit.setAutoLayout(nil, Trailing: 30, Top: 14, Bottom: nil, Width: nil, Height: nil, TargetView: titleLabel, MainView: self)
+        autoKit.setAutoLayout(nil, Trailing: 20, Top: 14, Bottom: nil, Width: nil, Height: nil, TargetView: titleLabel, MainView: self)
         autoKit.setHeightNotEqualSize(targetView: titleLabel, standardSize: 25, isBig: true)
-        autoKit.setViewTerm(20, leftView: titleImgV, rightView: titleLabel, mainView: self)
+        autoKit.setViewTerm(10, leftView: titleImgV, rightView: titleLabel, mainView: self)
         
-        autoKit.Trailing(writerLabel, MainView: self, TrailingSize: 30)
-        autoKit.setViewTerm(20, leftView: titleImgV, rightView: writerLabel, mainView: self)
+        autoKit.Trailing(writerLabel, MainView: self, TrailingSize: 20)
+        autoKit.setViewTerm(10, leftView: titleImgV, rightView: writerLabel, mainView: self)
         autoKit.setViewTerm(5, topView: titleLabel, bottomView: writerLabel, mainView: self)
         autoKit.EqualHeight(writerLabel, Height: 15)
         
-        autoKit.Trailing(bookCase, MainView: self, TrailingSize: 30)
-        autoKit.setViewTerm(20, leftView: titleImgV, rightView: bookCase, mainView: self)
+        autoKit.Trailing(bookCase, MainView: self, TrailingSize: 20)
+        autoKit.setViewTerm(10, leftView: titleImgV, rightView: bookCase, mainView: self)
         autoKit.setViewTerm(5, topView: writerLabel, bottomView: bookCase, mainView: self)
         autoKit.EqualHeight(bookCase, Height: 15)
     }
