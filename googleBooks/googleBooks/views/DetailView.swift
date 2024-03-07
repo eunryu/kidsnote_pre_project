@@ -26,7 +26,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         naviLabel = MakeUILabelKit.shared.makeLabel("도서정보", size: CGSize(width: 100, height: 30), addView: naviBar)
         MakeUILabelKit.shared.textDecoration(naviLabel, fontSize: 16, fontName: nil, color: .blk333, alignment: .center)
         
-        backBtn = MakeUIButtonKit.shared.makeButton(nImage: UIImage(resource: .iconBack), pImage: UIImage(resource: .iconBack), size: CGSize(width: 26, height: 26), addView: naviBar)
+        backBtn = MakeUIButtonKit.shared.makeButton(nImage: UIImage(resource: .iconBack), pImage: UIImage(resource: .iconBack), size: CGSize(width: 24, height: 24), addView: naviBar)
         
         // content
         contentV = MakeUITableViewKit.shared.makeTableView(size: CGSize(width: mainWidth, height: mainHeight), addView:self.mainV)
@@ -55,7 +55,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         
         autoKit.CenterY(backBtn, terms: 0, MainView: naviBar)
         autoKit.Leading(backBtn, MainView: naviBar, LeadingSize: 16)
-        autoKit.setEqualWidthAndHeight(26, height: 26, targetView: backBtn)
+        autoKit.setEqualWidthAndHeight(24, height: 24, targetView: backBtn)
         
         // action
         backBtn.addTarget(self, action: #selector(backAction(sender: )), for: .touchUpInside)

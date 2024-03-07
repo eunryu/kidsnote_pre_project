@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SearchView.searchAction():SearchView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in static CallManager.loadImage(imgURL:imgV:):CallManager.swift">
          <PersistentStrings>
             <PersistentString

@@ -9,9 +9,13 @@ import UIKit
 import RxSwift
 
 /// 디테일 뷰
-class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
+class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var searchNaviV: UIView!
+    var backBtn: UIButton!
+    var searchField: UITextField!
+    var searchBtn: UIButton!
+    
     var tabMenuV: UIStackView!
     var tabMenuBorderV: UIView!
     var contentV: UITableView!
@@ -23,6 +27,7 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     var bag = DisposeBag()
     
     var isFirstLoad: Bool = true
+    var searchMsg: String = ""
     
     override func initView() {
         super.initView()
@@ -30,6 +35,15 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         searchNaviV = UIView(frame: CGRect(x: 0, y: 0, width: mainWidth, height: 60))
         searchNaviV.translatesAutoresizingMaskIntoConstraints = false
         self.mainV.addSubview(searchNaviV)
+        
+        // navi
+        backBtn = MakeUIButtonKit.shared.makeButton(nImage: UIImage(resource: .iconBack), pImage: UIImage(resource: .iconBack), size: CGSize(width: 24, height: 24), addView: searchNaviV)
+        
+        searchBtn = MakeUIButtonKit.shared.makeButton(nImage: UIImage(resource: .btnSearch), pImage: UIImage(resource: .iconBack), size: CGSize(width: 24, height: 24), addView: searchNaviV)
+        
+        searchField = MakeUITextFieldKit.shared.makeTextField(placeholder: "검색어를 입력하세요", size: CGSize(width: mainWidth, height: 40), addView: searchNaviV)
+        searchField.delegate = self
+        searchField.returnKeyType = .search
         
         let borderV = MakeUIViewKit.shared.makeBorderView(borderWidth: mainWidth, borderColor: UIColor.lightGray, addView: searchNaviV)
         
@@ -78,6 +92,22 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
         safeKit.basicLayout(left: 0, right: 0, targetView: contentV, baseView: self.mainV)
         safeKit.singleLayout(type: .bottom, value: 0, targetView: contentV, baseView: self.mainV)
         autoKit.setViewTerm(0, topView: tabMenuBorderV, bottomView: contentV, mainView: self.mainV)
+        
+        autoKit.CenterY(backBtn, terms: 0, MainView: searchNaviV)
+        autoKit.Leading(backBtn, MainView: searchNaviV, LeadingSize: 16)
+        autoKit.setEqualWidthAndHeight(24, height: 24, targetView: backBtn)
+        
+        autoKit.CenterY(searchBtn, terms: 0, MainView: searchNaviV)
+        autoKit.Trailing(searchBtn, MainView: searchNaviV, TrailingSize: 16)
+        autoKit.setEqualWidthAndHeight(24, height: 24, targetView: searchBtn)
+        
+        autoKit.setViewTerm(10, leftView: backBtn, rightView: searchField, mainView: searchNaviV)
+        autoKit.setViewTerm(5, leftView: searchField, rightView: searchBtn, mainView: searchNaviV)
+        autoKit.CenterY(searchField, MainView: searchNaviV)
+        autoKit.EqualHeight(searchField, Height: 40)
+        
+        searchBtn.addTarget(self, action: #selector(searchBtnAction(sender: )), for: .touchUpInside)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextView.textDidChangeNotification, object: searchField)
     }
     
     override func initModel() {
@@ -101,6 +131,46 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
     override func viewReloadAction() {
         super.viewReloadAction()
+    }
+    
+    /** TextDelegate */
+    @objc private func textDidChange(_ notification: Notification) {
+        if let textField = notification.object as? UITextField {
+            if let txt = textField.text {
+                self.searchMsg = txt
+            }
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let txt = textField.text {
+            // 검색
+            self.searchMsg = txt
+        }
+        
+        self.searchAction()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    /** navi Btn Action */
+    @objc func searchBtnAction(sender: UIButton) {
+        self.view.endEditing(true)
+    }
+    
+    func searchAction() {
+        if "".elementsEqual(searchMsg) {
+            // 팝업
+            let popInfo = PopInfo(type: .msg, title: "알림", msg: "검색어를 입력해주세요", okBtn: PopBtnInfo(title: "확인", action: {
+                self.searchField.becomeFirstResponder()
+            }))
+            self.showPopup(info: popInfo)
+        } else {
+            googleBookVM.searhcGoogleBook(searchMsg: searchMsg)
+        }
     }
     
     /** UITableView */

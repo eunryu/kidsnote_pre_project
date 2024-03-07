@@ -54,6 +54,7 @@
 		DE77D2D12B934734003147A5 /* googleBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */; };
 		DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */; };
 		DED2247A2B99F56C0052B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED224792B99F56C0052B56E /* ContentView.swift */; };
+		DED2247C2B99FCBA0052B56E /* MakeUITextFieldKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED2247B2B99FCBA0052B56E /* MakeUITextFieldKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAudioCell.swift; sourceTree = "<group>"; };
 		DED224792B99F56C0052B56E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DED2247B2B99FCBA0052B56E /* MakeUITextFieldKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITextFieldKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				D337159C2B95A80B00792BE1 /* MakeUIButtonKit.swift */,
 				D33715A12B95AD2B00792BE1 /* MakeUITableViewKit.swift */,
 				D33715A72B95BA7900792BE1 /* MakeUIImageViewKit.swift */,
+				DED2247B2B99FCBA0052B56E /* MakeUITextFieldKit.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				D33715A22B95AD2B00792BE1 /* MakeUITableViewKit.swift in Sources */,
 				D337159D2B95A80B00792BE1 /* MakeUIButtonKit.swift in Sources */,
 				D3EDA33E2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift in Sources */,
+				DED2247C2B99FCBA0052B56E /* MakeUITextFieldKit.swift in Sources */,
 				D316C2952B96AEFC0007B4CF /* BaseTableViewCell.swift in Sources */,
 				DE6392B02B93772F00650C5E /* Documentation.docc in Sources */,
 				D36E22842B999C1D0051BB09 /* GoogleBookViewModel.swift in Sources */,
