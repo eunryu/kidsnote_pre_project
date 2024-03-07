@@ -10,6 +10,36 @@ import UIKit
 class ToolManager {
     static let shared = ToolManager()
     
+    /// Date -> String
+    func convertDateToString(date: Date, type: DateType) -> String {
+        let converter: DateFormatter = DateFormatter()
+        converter.dateFormat = type.rawValue
+        
+        return converter.string(from: date)
+    }
+    
+    /// String -> Date
+    func convertStringToDate(dateStr: String, type: DateType) -> Date {
+        var retDate = Date()
+        
+        let converter: DateFormatter = DateFormatter()
+        converter.dateFormat = type.rawValue
+        
+        if let cvtDate = converter.date(from: dateStr) {
+            retDate = cvtDate
+        }
+        
+        return retDate
+    }
+    
+    /// String 끼리 형변환
+    func convertStringDateFormat(preType: DateType, aftType: DateType, origin: String) -> String {
+        let convertStringToDate = self.convertStringToDate(dateStr: origin, type: preType)
+        let result = self.convertDateToString(date: convertStringToDate, type: aftType)
+        
+        return result
+    }
+    
     /// JSON to Dictionary
     func convertJSONToDictionary(jsonString: String) -> NSDictionary {
         var returnDic: NSDictionary = [:]

@@ -47,3 +47,11 @@ enum PopupType {
     case toast
     case confirm
 }
+
+/**
+ 날짜 타입
+ */
+enum DateType: String {
+    case apiDate = "yyyy-MM-dd"
+    case showDate = "yyyy년 MM월 dd일"
+}
