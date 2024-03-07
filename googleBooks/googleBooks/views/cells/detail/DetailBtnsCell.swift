@@ -16,8 +16,10 @@ class DetailBtnsCell: BaseTableViewCell {
     var infoImgV: UIImageView!
     var infoMsgLabel: UILabel!
     
-    var freeSampleBtn: CustomButton!
-    var buyBookBtn: CustomButton!
+    var freeSampleBtn: TabMenuButton!
+    var buyBookBtn: TabMenuButton!
+    
+    var detailV: DetailView!
     
     override func initView() {
         super.initView()
@@ -47,16 +49,52 @@ class DetailBtnsCell: BaseTableViewCell {
         autoKit.setAutoLayout(0, Trailing: 0, Top: nil, Bottom: 0, Width: nil, Height: 1, TargetView: bottomBorder, MainView: self)
         
         // 버튼 추가
-        let freeSampleBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "무료 샘플")
-        freeSampleBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
-        freeSampleBtn.setCustomButton(info: freeSampleBtnInfo)
-        freeSampleBtn.setBtnDeco(bgColor: .cmmBlue, txtColor: .blk333, useBorder: false)
-        btnsMainBox.addArrangedSubview(freeSampleBtn)
+//        let freeSampleBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "무료 샘플")
+//        freeSampleBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
+//        freeSampleBtn.setCustomButton(info: freeSampleBtnInfo)
+//        freeSampleBtn.setBtnDeco(bgColor: .cmmBlue, txtColor: .blk333, useBorder: false)
+//        btnsMainBox.addArrangedSubview(freeSampleBtn)
+//        
+//        let buyBookBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "전체 도서 구매하기")
+//        buyBookBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
+//        buyBookBtn.setCustomButton(info: buyBookBtnInfo)
+//        buyBookBtn.setBtnDeco(bgColor: .white, txtColor: .cmmBlue, useBorder: true)
+//        btnsMainBox.addArrangedSubview(buyBookBtn)
         
-        let buyBookBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "전체 도서 구매하기")
-        buyBookBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
-        buyBookBtn.setCustomButton(info: buyBookBtnInfo)
-        buyBookBtn.setBtnDeco(bgColor: .white, txtColor: .cmmBlue, useBorder: true)
+    }
+    
+    func actionMapping(view: DetailView) {
+        self.detailV = view
+        
+        freeSampleBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: self.detailV.mainWidth / 2, height: 60))
+        buyBookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: self.detailV.mainWidth / 2, height: 60))
+        
+        freeSampleBtn.setTitle(title: "search_tab_title_ebook".localized)
+        buyBookBtn.setTitle(title: "search_tab_title_audiobook".localized)
+        freeSampleBtn.changeBtnWithState(state: false)
+        buyBookBtn.changeBtnWithState(state: false)
+        
+        btnsMainBox.addArrangedSubview(freeSampleBtn)
         btnsMainBox.addArrangedSubview(buyBookBtn)
+        
+        self.freeSampleBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showSampleAction(sender:))))
+        self.freeSampleBtn.isUserInteractionEnabled = true
+        
+        self.buyBookBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showBuyPage(sender:))))
+        self.buyBookBtn.isUserInteractionEnabled = true
+    }
+    
+    @objc func showSampleAction(sender: UITapGestureRecognizer) {
+        print("Check")
+        if let detail = detailV {
+            detail.showSampleAction()
+        }
+    }
+    
+    @objc func showBuyPage(sender: UITapGestureRecognizer) {
+        print("Check")
+        if let detail = detailV {
+            detail.showBuyPage()
+        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
@@ -95,6 +96,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell: DetailBtnsCell = tableView.dequeueReusableCell(withIdentifier: "DetailBtnsCell") as! DetailBtnsCell
+            cell.actionMapping(view: self)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 2 {
@@ -125,6 +127,25 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             let contentV = mainST.instantiateViewController(identifier: "ContentView") as! ContentView
             contentV.showContent = bookInfo.originDescription
             self.navigationController?.pushViewController(contentV, animated: true)
+        }
+    }
+    
+    // move safari
+    func showSampleAction() {
+        if let showUrl = URL(string: self.bookInfo.sampleUrl) {
+            let safariViewController = SFSafariViewController(url: showUrl)
+            present(safariViewController, animated: true, completion: nil)
+        } else {
+            let popInfo = PopInfo(type: .msg, title: "알림", msg: "현재 샘플을 이용할수 없습니다", okBtn: PopBtnInfo(title: "확인", action: {
+                
+            }))
+            self.showPopup(info: popInfo)
+        }
+    }
+    
+    func showBuyPage() {
+        if let open = URL(string: "https://play.google.com/store/books"), UIApplication.shared.canOpenURL(open) {
+            UIApplication.shared.open(open)
         }
     }
 }

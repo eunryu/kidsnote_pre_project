@@ -25,6 +25,8 @@ class GoogleBookInfo {
     var shortDescription: String
     var originDescription: String
     
+    var sampleUrl: String
+    
     init() {
         self.bookId = ""
         self.titleImgUrl = ""
@@ -40,6 +42,8 @@ class GoogleBookInfo {
         
         self.shortDescription = ""
         self.originDescription = ""
+        
+        self.sampleUrl = ""
     }
     
     init(data: NSDictionary) {
@@ -57,6 +61,8 @@ class GoogleBookInfo {
         
         self.shortDescription = ""
         self.originDescription = ""
+        
+        self.sampleUrl = ""
         
         let bookInfoDic = data.checkBlankDictionary(key: "volumeInfo")
         if bookInfoDic.count > 0 {
@@ -93,5 +99,8 @@ class GoogleBookInfo {
             self.shortDescription = searchInfoDic.checkBlankStringValue(key: "textSnippet", defStr: "")
             self.originDescription = bookInfoDic.checkBlankStringValue(key: "description", defStr: "")
         }
+        
+        let accessDic = data.checkBlankDictionary(key: "accessInfo")
+        self.sampleUrl = accessDic.checkBlankStringValue(key: "webReaderLink", defStr: "")
     }
 }
