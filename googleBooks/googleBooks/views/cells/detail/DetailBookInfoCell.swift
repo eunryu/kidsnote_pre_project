@@ -18,7 +18,7 @@ class DetailBookInfoCell: BaseTableViewCell {
     override func initView() {
         super.initView()
         
-        bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
+        bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(resource: .no), size: CGSize(width: 70, height: 100), addView: self)
         bookImgV.layer.cornerRadius = 4
         bookImgV.layer.masksToBounds = true
         

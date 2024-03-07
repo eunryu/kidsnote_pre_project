@@ -21,7 +21,7 @@ class SearchListCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
+        titleImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(resource: .no), size: CGSize(width: 70, height: 100), addView: self)
         titleImgV.containerDecoration(layerColor: nil, layerWidth: nil, bgColor: nil, corner: 10)
         
         titleLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 25), addView: self)

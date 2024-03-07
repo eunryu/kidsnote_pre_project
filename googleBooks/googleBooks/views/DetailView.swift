@@ -118,4 +118,13 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            let mainST = UIStoryboard(name: "Main", bundle: nil)
+            let contentV = mainST.instantiateViewController(identifier: "ContentView") as! ContentView
+            contentV.showContent = bookInfo.originDescription
+            self.navigationController?.pushViewController(contentV, animated: true)
+        }
+    }
 }
