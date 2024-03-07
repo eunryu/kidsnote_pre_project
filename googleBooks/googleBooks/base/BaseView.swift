@@ -66,4 +66,15 @@ class BaseView: UIViewController {
     func viewReloadAction() {
         
     }
+    
+    // 공통함수
+    func showPopup(info: PopInfo) {
+        if info.type == .msg {
+            let alert = UIAlertController(title: info.title, message: info.msg, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: info.okBtn.title, style: .default, handler: { alert in
+                info.okBtn.action()
+            }))
+            self.present(alert, animated: true)
+        }
+    }
 }

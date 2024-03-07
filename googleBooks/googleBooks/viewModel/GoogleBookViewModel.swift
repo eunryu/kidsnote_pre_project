@@ -12,6 +12,7 @@ class GoogleBookViewModel : CallDelegate {
     
     private let callM = CallManager.shared
     
+    var showMsgPop = PublishSubject<PopInfo>()
     var listReload = PublishSubject<[GoogleBookInfo]>()
 
     func searhcGoogleBook(searchMsg: String) {
@@ -44,6 +45,11 @@ class GoogleBookViewModel : CallDelegate {
                 
                 self.listReload.onNext(array)
             }
+        } else {
+            let info = PopInfo(type: .msg, title: "알림", msg: resInfo.resMsg, okBtn: PopBtnInfo(title: "확인", action: {
+                
+            }))
+            self.showMsgPop.onNext(info)
         }
     }
 }

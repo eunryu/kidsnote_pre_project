@@ -36,6 +36,8 @@
 		D3EDA33A2B9859A300A63EC3 /* DetailBookContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA3392B9859A300A63EC3 /* DetailBookContentCell.swift */; };
 		D3EDA33C2B985C7200A63EC3 /* DetailStarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA33B2B985C7200A63EC3 /* DetailStarInfoCell.swift */; };
 		D3EDA33E2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDA33D2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift */; };
+		DE39816F2B99F04D000A87BC /* MsgPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE39816E2B99F04D000A87BC /* MsgPopupView.swift */; };
+		DE3981712B99F0E5000A87BC /* AboutMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3981702B99F0E5000A87BC /* AboutMsg.swift */; };
 		DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AB2B934A0600650C5E /* BaseView.swift */; };
 		DE6392B02B93772F00650C5E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE6392AF2B93772F00650C5E /* Documentation.docc */; };
 		DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6392B32B93780500650C5E /* AboutHttp.swift */; };
@@ -108,6 +110,8 @@
 		D3EDA3392B9859A300A63EC3 /* DetailBookContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookContentCell.swift; sourceTree = "<group>"; };
 		D3EDA33B2B985C7200A63EC3 /* DetailStarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStarInfoCell.swift; sourceTree = "<group>"; };
 		D3EDA33D2B9860AA00A63EC3 /* DetailCreatorInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCreatorInfoCell.swift; sourceTree = "<group>"; };
+		DE39816E2B99F04D000A87BC /* MsgPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgPopupView.swift; sourceTree = "<group>"; };
+		DE3981702B99F0E5000A87BC /* AboutMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMsg.swift; sourceTree = "<group>"; };
 		DE6392AB2B934A0600650C5E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		DE6392AF2B93772F00650C5E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = Documentation.docc; path = googleBooks/Documentation.docc; sourceTree = SOURCE_ROOT; };
 		DE6392B32B93780500650C5E /* AboutHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHttp.swift; sourceTree = "<group>"; };
@@ -230,6 +234,14 @@
 			path = component;
 			sourceTree = "<group>";
 		};
+		DE39816D2B99F040000A87BC /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				DE39816E2B99F04D000A87BC /* MsgPopupView.swift */,
+			);
+			path = popup;
+			sourceTree = "<group>";
+		};
 		DE6392AA2B9349FA00650C5E /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 		DE6392AE2B934A2B00650C5E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				DE39816D2B99F040000A87BC /* popup */,
 				D33715A42B95ADC000792BE1 /* component */,
 				D33715A32B95ADBB00792BE1 /* cells */,
 				DE77D2B12B934732003147A5 /* SearchView.swift */,
@@ -277,6 +290,7 @@
 				DE6392B32B93780500650C5E /* AboutHttp.swift */,
 				D373136B2B9945FB00E8E87F /* ErrorInfo.swift */,
 				D36E22812B99962C0051BB09 /* GoogleBookInfo.swift */,
+				DE3981702B99F0E5000A87BC /* AboutMsg.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -602,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33715992B95A79000792BE1 /* MakeUITextViewKit.swift in Sources */,
+				DE39816F2B99F04D000A87BC /* MsgPopupView.swift in Sources */,
 				D33715922B95978500792BE1 /* SafeLayoutManager.swift in Sources */,
 				DE6392AC2B934A0600650C5E /* BaseView.swift in Sources */,
 				D36E22822B99962C0051BB09 /* GoogleBookInfo.swift in Sources */,
@@ -611,6 +626,7 @@
 				D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */,
 				D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
+				DE3981712B99F0E5000A87BC /* AboutMsg.swift in Sources */,
 				DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */,
 				D316C2972B96AF530007B4CF /* DetailBookInfoCell.swift in Sources */,
 				D316C2992B96E0D20007B4CF /* DetailBtnsCell.swift in Sources */,

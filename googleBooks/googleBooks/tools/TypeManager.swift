@@ -41,3 +41,9 @@ enum BlankType {
     case notLoad
     case dataBlank
 }
+
+enum PopupType {
+    case msg
+    case toast
+    case confirm
+}
