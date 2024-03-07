@@ -20,6 +20,7 @@ class GoogleBookInfo {
     var rating: Int
     var ratingCnt: Int
     var publishedDate: String
+    var publisher: String
     
     var shortDescription: String
     var originDescription: String
@@ -35,6 +36,7 @@ class GoogleBookInfo {
         self.rating = 0
         self.ratingCnt = 0
         self.publishedDate = ""
+        self.publisher = ""
         
         self.shortDescription = ""
         self.originDescription = ""
@@ -51,6 +53,7 @@ class GoogleBookInfo {
         self.rating = 0
         self.ratingCnt = 0
         self.publishedDate = ""
+        self.publisher = ""
         
         self.shortDescription = ""
         self.originDescription = ""
@@ -84,8 +87,9 @@ class GoogleBookInfo {
             self.rating = bookInfoDic.checkBlankInteger(key: "averageRating")
             self.ratingCnt = bookInfoDic.checkBlankInteger(key: "ratingsCount")
             self.publishedDate = bookInfoDic.checkBlankStringValue(key: "publishedDate", defStr: "")
+            self.publisher = bookInfoDic.checkBlankStringValue(key: "publisher", defStr: "")
             
-            let searchInfoDic = bookInfoDic.checkBlankDictionary(key: "searchInfo")
+            let searchInfoDic = data.checkBlankDictionary(key: "searchInfo")
             self.shortDescription = searchInfoDic.checkBlankStringValue(key: "textSnippet", defStr: "")
             self.originDescription = bookInfoDic.checkBlankStringValue(key: "description", defStr: "")
         }

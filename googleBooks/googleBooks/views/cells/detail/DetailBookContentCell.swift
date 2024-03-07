@@ -35,4 +35,8 @@ class DetailBookContentCell: BaseTableViewCell {
         autoKit.equalViewCenterVertical(targetView: arrowV, standardView: titleLabel, mainView: self)
         autoKit.Trailing(arrowV, MainView: self, TrailingSize: 16)
     }
+    
+    func initData(content: String) {
+        contentLabel.text = content
+    }
 }

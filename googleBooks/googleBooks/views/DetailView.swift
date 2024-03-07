@@ -62,6 +62,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 2 {
             let cell: DetailBookContentCell = tableView.dequeueReusableCell(withIdentifier: "DetailBookContentCell") as! DetailBookContentCell
+            cell.initData(content: bookInfo.shortDescription)
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 3 {
@@ -71,6 +72,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         }
         
         let cell: DetailCreatorInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailCreatorInfoCell") as! DetailCreatorInfoCell
+        cell.initData(bookInfo: bookInfo)
         cell.selectionStyle = .none
         return cell
     }

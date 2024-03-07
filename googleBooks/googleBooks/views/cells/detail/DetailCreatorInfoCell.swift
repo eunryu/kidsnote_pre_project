@@ -25,4 +25,8 @@ class DetailCreatorInfoCell: BaseTableViewCell {
         autoKit.setAutoLayout(16, Trailing: 16, Top: nil, Bottom: 30, Width: nil, Height: 20, TargetView: dateInfoLabel, MainView: self)
         autoKit.setViewTerm(16, topView: titleLabel, bottomView: dateInfoLabel, mainView: self)
     }
+    
+    func initData(bookInfo: GoogleBookInfo) {
+        dateInfoLabel.text = "\(bookInfo.publishedDate), \(bookInfo.publisher)"
+    }
 }
