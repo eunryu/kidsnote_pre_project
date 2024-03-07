@@ -83,9 +83,13 @@ class CallManager {
                 if let resCheck = response as? HTTPURLResponse {
                     if resCheck.statusCode == 200 {
                         // 성공
-                        if let data = imgData {
-                            loadData = UIImage(data: data)
-                            loadState = true
+                        if let resChk = response, let minType = resChk.mimeType, minType.contains("image") {
+                            if let data = imgData {
+                                loadData = UIImage(data: data)
+                                loadState = true
+                            } else {
+                                loadState = false
+                            }
                         } else {
                             loadState = false
                         }
@@ -100,7 +104,7 @@ class CallManager {
                         imgV.image = loadImg
                     }
                 }
-            }
+            }.resume()
         }
     }
 }

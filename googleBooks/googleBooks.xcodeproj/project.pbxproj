@@ -53,6 +53,7 @@
 		DE77D2CF2B934734003147A5 /* googleBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2CE2B934734003147A5 /* googleBooksUITests.swift */; };
 		DE77D2D12B934734003147A5 /* googleBooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */; };
 		DE97566D2B96189E009EF5D6 /* SearchAudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */; };
+		DED2247A2B99F56C0052B56E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED224792B99F56C0052B56E /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		DE77D2CE2B934734003147A5 /* googleBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBooksUITests.swift; sourceTree = "<group>"; };
 		DE77D2D02B934734003147A5 /* googleBooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleBooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DE97566C2B96189E009EF5D6 /* SearchAudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAudioCell.swift; sourceTree = "<group>"; };
+		DED224792B99F56C0052B56E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 				D33715A32B95ADBB00792BE1 /* cells */,
 				DE77D2B12B934732003147A5 /* SearchView.swift */,
 				D316C2912B96AEB50007B4CF /* DetailView.swift */,
+				DED224792B99F56C0052B56E /* ContentView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				D33715A62B95ADD300792BE1 /* SearchListCell.swift in Sources */,
 				D33715AA2B95BE7800792BE1 /* TabMenuButton.swift in Sources */,
 				DE77D2AE2B934732003147A5 /* AppDelegate.swift in Sources */,
+				DED2247A2B99F56C0052B56E /* ContentView.swift in Sources */,
 				DE3981712B99F0E5000A87BC /* AboutMsg.swift in Sources */,
 				DE6392B42B93780500650C5E /* AboutHttp.swift in Sources */,
 				D316C2972B96AF530007B4CF /* DetailBookInfoCell.swift in Sources */,

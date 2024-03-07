@@ -68,6 +68,7 @@ extension UIImageView {
         
         if corner != nil {
             self.layer.cornerRadius = corner!
+            self.layer.masksToBounds = true
         }
     }
 }

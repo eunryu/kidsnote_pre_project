@@ -19,7 +19,8 @@ class DetailBookInfoCell: BaseTableViewCell {
         super.initView()
         
         bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
-        bookImgV.backgroundColor = .brown
+        bookImgV.layer.cornerRadius = 4
+        bookImgV.layer.masksToBounds = true
         
         bookTitleLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 20), addView: self)
         bookTitleLabel.numberOfLines = 0
@@ -52,6 +53,8 @@ class DetailBookInfoCell: BaseTableViewCell {
     }
     
     func initData(data: GoogleBookInfo) {
+        CallManager.loadImage(imgURL: data.titleImgUrl, imgV: self.bookImgV)
+        
         bookTitleLabel.text = data.title
         bookWriterLabel.text = data.writer
         bookInfoLabel.text = "eBook/\(data.pageCnt)페이지"
