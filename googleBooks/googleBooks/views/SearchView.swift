@@ -20,8 +20,12 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
     var tabMenuBorderV: UIView!
     var contentV: UITableView!
     
+    var ebookBtn: TabMenuButton!
+    var audioBookBtn: TabMenuButton!
+    
     var searchMenuType: TabType = .ebook
     var listData: [GoogleBookInfo] = []
+    var audioBookData: [GoogleBookInfo] = []
     
     var googleBookVM = GoogleBookViewModel()
     var bag = DisposeBag()
@@ -54,8 +58,8 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
         self.mainV.addSubview(tabMenuV)
         
         // menuBtn
-        let ebookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
-        let audioBookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        ebookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
+        audioBookBtn = TabMenuButton(frame: CGRect(x: 0, y: 0, width: mainWidth / 2, height: 60))
         
         ebookBtn.setTitle(title: "search_tab_title_ebook".localized)
         audioBookBtn.setTitle(title: "search_tab_title_audiobook".localized)
@@ -108,6 +112,14 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
         
         searchBtn.addTarget(self, action: #selector(searchBtnAction(sender: )), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextView.textDidChangeNotification, object: searchField)
+        
+        ebookBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tabAction(sender: ))))
+        audioBookBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tabAction(sender: ))))
+        ebookBtn.isUserInteractionEnabled = true
+        audioBookBtn.isUserInteractionEnabled = true
+        
+        ebookBtn.tag = 100
+        audioBookBtn.tag = 101
     }
     
     override func initModel() {
@@ -126,11 +138,36 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
     
     override func firstAction() {
         super.firstAction()
-        googleBookVM.searhcGoogleBook(searchMsg: "ios")
     }
     
     override func viewReloadAction() {
         super.viewReloadAction()
+    }
+    
+    @objc func tabAction(sender: UITapGestureRecognizer) {
+        if let view = sender.view {
+            let tagNum = view.tag
+            
+            if tagNum == 100 {
+                if searchMenuType != .ebook {
+                    searchMenuType = .ebook
+                    
+                    ebookBtn.changeBtnWithState(state: true)
+                    audioBookBtn.changeBtnWithState(state: false)
+                    
+                    self.contentV.reloadData()
+                }
+            } else if tagNum == 101 {
+                if searchMenuType != .audioBook {
+                    searchMenuType = .audioBook
+                    
+                    ebookBtn.changeBtnWithState(state: false)
+                    audioBookBtn.changeBtnWithState(state: true)
+                    
+                    self.contentV.reloadData()
+                }
+            }
+        }
     }
     
     /** TextDelegate */
@@ -179,15 +216,43 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if listData.count == 0 {
+        if searchMenuType == .ebook {
+            if listData.count == 0 {
+                return 1
+            }
+            
+            return listData.count
+        }
+        
+        if audioBookData.count == 0 {
             return 1
         }
         
-        return listData.count
+        return audioBookData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if listData.count == 0 {
+        if searchMenuType == .ebook {
+            if listData.count == 0 {
+                let cell: CmmBlankCell = tableView.dequeueReusableCell(withIdentifier: "CmmBlankCell") as! CmmBlankCell
+                cell.selectionStyle = .none
+                
+                var type: BlankType = .dataBlank
+                if isFirstLoad {
+                    type = .notLoad
+                }
+                cell.setBlankInfo(type: type)
+                
+                return cell
+            }
+            
+            let cell: SearchListCell = tableView.dequeueReusableCell(withIdentifier: "SearchListCell") as! SearchListCell
+            cell.initData(item: self.listData[indexPath.row])
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        if audioBookData.count == 0 {
             let cell: CmmBlankCell = tableView.dequeueReusableCell(withIdentifier: "CmmBlankCell") as! CmmBlankCell
             cell.selectionStyle = .none
             
@@ -201,7 +266,7 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
         }
         
         let cell: SearchListCell = tableView.dequeueReusableCell(withIdentifier: "SearchListCell") as! SearchListCell
-        cell.initData(item: self.listData[indexPath.row])
+        cell.initData(item: self.audioBookData[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }
