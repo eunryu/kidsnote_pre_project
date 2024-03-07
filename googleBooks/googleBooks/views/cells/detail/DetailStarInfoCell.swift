@@ -30,7 +30,7 @@ class DetailStarInfoCell: BaseTableViewCell {
         self.addSubview(ratingBox)
         
         autoKit.setAutoLayout(16, Trailing: 16, Top: 20, Bottom: nil, Width: nil, Height: 25, TargetView: titleLabel, MainView: self)
-        autoKit.setAutoLayout(16, Trailing: 16, Top: nil, Bottom: 0, Width: nil, Height: 50, TargetView: ratingBox, MainView: self)
+        autoKit.setAutoLayout(16, Trailing: 16, Top: nil, Bottom: 10, Width: nil, Height: 50, TargetView: ratingBox, MainView: self)
         autoKit.setViewTerm(16, topView: titleLabel, bottomView: ratingBox, mainView: self)
         
         autoKit.setEqualWidthAndHeight(16, height: 16, targetView: arrowV)
@@ -48,4 +48,13 @@ class DetailStarInfoCell: BaseTableViewCell {
         autoKit.setAutoLayout(0, Trailing: nil, Top: nil, Bottom: 0, Width: 150, Height: 20, TargetView: ratingCntLabel, MainView: ratingBox)
     }
     
+    func initData(info: GoogleBookInfo) {
+        if info.rating == 0 {
+            ratingLabel.text = "0.0"
+        } else {
+            ratingLabel.text = "\(info.rating)"
+        }
+        
+        ratingCntLabel.text = "Google Play 평점 \(info.ratingCnt)개"
+    }
 }

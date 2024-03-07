@@ -39,6 +39,19 @@ class CustomButton: UIView {
             autoKit.setCenterLayout(true, Y: true, TargetView: btnTitleLabel, MainView: self)
         }
     }
+    
+    func setBtnDeco(bgColor: UIColor, txtColor: UIColor, useBorder: Bool) {
+        self.backgroundColor = bgColor
+        self.btnTitleLabel.textColor = txtColor
+        
+        if useBorder {
+            self.layer.borderColor = UIColor.borderGray.cgColor
+            self.layer.borderWidth = 1
+        }
+        
+        self.layer.cornerRadius = 4
+        self.layer.masksToBounds = true
+    }
 }
 
 class CustomButtonInfo {

@@ -18,6 +18,8 @@ extension UIColor {
     
     static let borderGray = UIColor("#e0dfe1")
     static let contentGray = UIColor("#999a9d")
+    
+    static let cmmBlue = UIColor("#6bb2ee")
 }
 
 //MARK: String

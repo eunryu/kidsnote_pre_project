@@ -103,6 +103,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 3 {
             let cell: DetailStarInfoCell = tableView.dequeueReusableCell(withIdentifier: "DetailStarInfoCell") as! DetailStarInfoCell
+            cell.initData(info: bookInfo)
             cell.selectionStyle = .none
             return cell
         }

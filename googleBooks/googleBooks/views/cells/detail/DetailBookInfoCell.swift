@@ -34,18 +34,18 @@ class DetailBookInfoCell: BaseTableViewCell {
         let grayBorder = MakeUIViewKit.shared.makeBorderView(borderWidth: 100, borderColor: .borderGray, addView: self)
         
         // autoLayout
-        autoKit.setAutoLayout(30, Trailing: nil, Top: 30, Bottom: 30, Width: 70, Height: 100, TargetView: bookImgV, MainView: self)
+        autoKit.setAutoLayout(20, Trailing: nil, Top: 30, Bottom: 30, Width: 70, Height: 100, TargetView: bookImgV, MainView: self)
         
-        autoKit.setAutoLayout(nil, Trailing: 30, Top: 30, Bottom: nil, Width: nil, Height: nil, TargetView: bookTitleLabel, MainView: self)
-        autoKit.setViewTerm(30, leftView: bookImgV, rightView: bookTitleLabel, mainView: self)
+        autoKit.setAutoLayout(nil, Trailing: 20, Top: 30, Bottom: nil, Width: nil, Height: nil, TargetView: bookTitleLabel, MainView: self)
+        autoKit.setViewTerm(20, leftView: bookImgV, rightView: bookTitleLabel, mainView: self)
         autoKit.setHeightNotEqualSize(targetView: bookTitleLabel, standardSize: 25, isBig: true)
         
-        autoKit.setAutoLayout(nil, Trailing: 30, Top: nil, Bottom: nil, Width: nil, Height: 16, TargetView: bookWriterLabel, MainView: self)
-        autoKit.setViewTerm(30, leftView: bookImgV, rightView: bookWriterLabel, mainView: self)
+        autoKit.setAutoLayout(nil, Trailing: 20, Top: nil, Bottom: nil, Width: nil, Height: 16, TargetView: bookWriterLabel, MainView: self)
+        autoKit.setViewTerm(20, leftView: bookImgV, rightView: bookWriterLabel, mainView: self)
         autoKit.setViewTerm(5, topView: bookTitleLabel, bottomView: bookWriterLabel, mainView: self)
         
-        autoKit.setAutoLayout(nil, Trailing: 30, Top: nil, Bottom: nil, Width: nil, Height: 16, TargetView: bookInfoLabel, MainView: self)
-        autoKit.setViewTerm(30, leftView: bookImgV, rightView: bookInfoLabel, mainView: self)
+        autoKit.setAutoLayout(nil, Trailing: 20, Top: nil, Bottom: nil, Width: nil, Height: 16, TargetView: bookInfoLabel, MainView: self)
+        autoKit.setViewTerm(20, leftView: bookImgV, rightView: bookInfoLabel, mainView: self)
         autoKit.setViewTerm(5, topView: bookWriterLabel, bottomView: bookInfoLabel, mainView: self)
         
         autoKit.setAutoLayout(0, Trailing: 0, Top: nil, Bottom: 0, Width: nil, Height: 1, TargetView: grayBorder, MainView: self)

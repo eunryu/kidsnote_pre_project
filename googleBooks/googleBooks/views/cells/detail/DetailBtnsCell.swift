@@ -16,10 +16,13 @@ class DetailBtnsCell: BaseTableViewCell {
     var infoImgV: UIImageView!
     var infoMsgLabel: UILabel!
     
+    var freeSampleBtn: CustomButton!
+    var buyBookBtn: CustomButton!
+    
     override func initView() {
         super.initView()
         
-        btnsMainBox = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 60))
+        btnsMainBox = UIStackView(frame: CGRect(x: 0, y: 0, width: 0, height: 40))
         btnsMainBox.translatesAutoresizingMaskIntoConstraints = false
         btnsMainBox.axis = .horizontal
         btnsMainBox.distribution = .fillEqually
@@ -31,7 +34,7 @@ class DetailBtnsCell: BaseTableViewCell {
         MakeUILabelKit.shared.textDecoration(infoMsgLabel, fontSize: 12, fontName: nil, color: .blk666, alignment: .left)
         infoMsgLabel.numberOfLines = 0
         
-        autoKit.setAutoLayout(16, Trailing: 16, Top: 13, Bottom: nil, Width: nil, Height: 60, TargetView: btnsMainBox, MainView: self)
+        autoKit.setAutoLayout(16, Trailing: 16, Top: 13, Bottom: nil, Width: nil, Height: 40, TargetView: btnsMainBox, MainView: self)
         autoKit.setAutoLayout(16, Trailing: nil, Top: nil, Bottom: nil, Width: 20, Height: 20, TargetView: infoImgV, MainView: self)
         autoKit.equalViewTop(targetView: infoImgV, standardView: infoMsgLabel, mainView: self)
         
@@ -42,5 +45,18 @@ class DetailBtnsCell: BaseTableViewCell {
         
         let bottomBorder = MakeUIViewKit.shared.makeBorderView(borderWidth: 100, borderColor: .borderGray, addView: self)
         autoKit.setAutoLayout(0, Trailing: 0, Top: nil, Bottom: 0, Width: nil, Height: 1, TargetView: bottomBorder, MainView: self)
+        
+        // 버튼 추가
+        let freeSampleBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "무료 샘플")
+        freeSampleBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
+        freeSampleBtn.setCustomButton(info: freeSampleBtnInfo)
+        freeSampleBtn.setBtnDeco(bgColor: .cmmBlue, txtColor: .blk333, useBorder: false)
+        btnsMainBox.addArrangedSubview(freeSampleBtn)
+        
+        let buyBookBtnInfo = CustomButtonInfo(type: .onlyTitle, title: "전체 도서 구매하기")
+        buyBookBtn = CustomButton(frame: CGRect(x: 0, y: 0, width: btnsMainBox.frame.width / 2, height: 60))
+        buyBookBtn.setCustomButton(info: buyBookBtnInfo)
+        buyBookBtn.setBtnDeco(bgColor: .white, txtColor: .cmmBlue, useBorder: true)
+        btnsMainBox.addArrangedSubview(buyBookBtn)
     }
 }
