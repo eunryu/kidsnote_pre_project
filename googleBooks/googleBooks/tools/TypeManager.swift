@@ -8,11 +8,23 @@
 import UIKit
 
 enum ApiType: String {
-    case real = ""
+    case real = "https://www.googleapis.com"
 }
 
 enum PathType: String {
     case none = ""
+    case bookSearchApi = "/books/v1/volumes"
+}
+
+enum ResDataType {
+    case none
+    case dic
+    case array
+}
+
+enum CallType {
+    case get
+    case post
 }
 
 enum TabType {
@@ -24,3 +36,4 @@ enum CustomButtonType {
     case onlyTitle
     case imgWithTitle
 }
+

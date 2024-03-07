@@ -87,4 +87,35 @@ class ToolManager {
         
         return resultInt
     }
+    
+    /// URL Request
+    func makeCallUrlRequest(info: RequestInfo) -> URLRequest? {
+        var callUrl = CommonItem.isApiMode.rawValue + info.pathType.rawValue
+        
+        if info.callType == .get {
+            if info.param.count > 0 {
+                var paramUrl = ""
+                
+                let keyArray = info.param.allKeys
+                for item in keyArray {
+                    let keyString = item
+                    let valueString = self.checkBlankString(checkValue: info.param[keyString] as? String, defaultStr: "")
+                    
+                    if "".elementsEqual(paramUrl) {
+                        paramUrl = "\(keyString)=\(valueString)"
+                    } else {
+                        paramUrl = "\(paramUrl)&\(keyString)=\(valueString)"
+                    }
+                }
+                
+                callUrl = "\(callUrl)?\(paramUrl)"
+            }
+        }
+        
+        if let checkUrl = URL(string: callUrl) {
+            return URLRequest(url: checkUrl)
+        }
+        
+        return nil
+    }
 }

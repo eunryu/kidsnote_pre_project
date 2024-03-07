@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 /// 디테일 뷰
 class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
@@ -16,6 +17,10 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     var contentV: UITableView!
     
     var searchMenuType: TabType = .ebook
+    var listData: [GoogleBookInfo] = []
+    
+    var googleBookVM = GoogleBookViewModel()
+    var bag = DisposeBag()
     
     override func initView() {
         super.initView()
@@ -73,10 +78,20 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
     override func initModel() {
         super.initModel()
+        
+        googleBookVM = GoogleBookViewModel()
+        googleBookVM.listReload.subscribe { itemArrayEle in
+            if let itemArray = itemArrayEle.element {
+                self.listData = itemArray
+            }
+            
+            self.contentV.reloadData()
+        }.disposed(by: bag)
     }
     
     override func firstAction() {
         super.firstAction()
+        googleBookVM.searhcGoogleBook(searchMsg: "ios")
     }
     
     override func viewReloadAction() {
@@ -89,11 +104,12 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchListCell = tableView.dequeueReusableCell(withIdentifier: "SearchListCell") as! SearchListCell
+        cell.initData(item: self.listData[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }

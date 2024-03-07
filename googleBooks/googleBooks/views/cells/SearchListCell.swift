@@ -55,4 +55,10 @@ class SearchListCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func initData(item: GoogleBookInfo) {
+        self.titleLabel.text = item.title
+        self.writerLabel.text = item.writer
+        self.bookCase.text = "eBook"
+    }
 }
