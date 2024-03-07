@@ -9,12 +9,26 @@ import UIKit
 
 class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
+    var naviBar: UIView!
+    var naviLabel: UILabel!
+    var backBtn: UIButton!
+    
     var contentV: UITableView!
     var bookInfo: GoogleBookInfo = GoogleBookInfo()
     
     override func initView() {
         super.initView()
         
+        naviBar = UIView(frame: CGRect(x: 0, y: 0, width: mainWidth, height: 60))
+        naviBar.translatesAutoresizingMaskIntoConstraints = false
+        self.mainV.addSubview(naviBar)
+        
+        naviLabel = MakeUILabelKit.shared.makeLabel("도서정보", size: CGSize(width: 100, height: 30), addView: naviBar)
+        MakeUILabelKit.shared.textDecoration(naviLabel, fontSize: 16, fontName: nil, color: .blk333, alignment: .center)
+        
+        backBtn = MakeUIButtonKit.shared.makeButton(nImage: UIImage(resource: .iconBack), pImage: UIImage(resource: .iconBack), size: CGSize(width: 26, height: 26), addView: naviBar)
+        
+        // content
         contentV = MakeUITableViewKit.shared.makeTableView(size: CGSize(width: mainWidth, height: mainHeight), addView:self.mainV)
         contentV.register(DetailBookInfoCell.self, forCellReuseIdentifier: "DetailBookInfoCell")
         contentV.register(DetailBtnsCell.self, forCellReuseIdentifier: "DetailBtnsCell")
@@ -22,11 +36,28 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         contentV.register(DetailStarInfoCell.self, forCellReuseIdentifier: "DetailStarInfoCell")
         contentV.register(DetailCreatorInfoCell.self, forCellReuseIdentifier: "DetailCreatorInfoCell")
         contentV.separatorStyle = .none
+        contentV.showsVerticalScrollIndicator = false
         
         contentV.delegate = self
         contentV.dataSource = self
         
-        autoKit.setAutoLayout(0, Trailing: 0, Top: 0, Bottom: 0, Width: nil, Height: nil, TargetView: contentV, MainView: self.mainV)
+        safeKit.basicLayout(left: 0, right: 0, targetView: naviBar, baseView: self.mainV)
+        safeKit.singleLayout(type: .top, value: 0, targetView: naviBar, baseView: self.mainV)
+        autoKit.EqualHeight(naviBar, Height: 60)
+        
+        safeKit.basicLayout(left: 0, right: 0, targetView: contentV, baseView: self.mainV)
+        safeKit.singleLayout(type: .bottom, value: 0, targetView: contentV, baseView: self.mainV)
+        autoKit.setViewTerm(0, topView: naviBar, bottomView: contentV, mainView: self.mainV)
+        
+        autoKit.setCenterLayout(true, Y: true, TargetView: naviLabel, MainView: naviBar)
+        autoKit.setEqualWidthAndHeight(100, height: 30, targetView: naviLabel)
+        
+        autoKit.CenterY(backBtn, terms: 0, MainView: naviBar)
+        autoKit.Leading(backBtn, MainView: naviBar, LeadingSize: 16)
+        autoKit.setEqualWidthAndHeight(26, height: 26, targetView: backBtn)
+        
+        // action
+        backBtn.addTarget(self, action: #selector(backAction(sender: )), for: .touchUpInside)
     }
     
     override func initModel() {
@@ -39,6 +70,11 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     
     override func viewReloadAction() {
         super.viewReloadAction()
+    }
+    
+    /** Back Action */
+    @objc func backAction(sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     /** UITableView */
