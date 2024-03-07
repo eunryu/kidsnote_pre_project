@@ -21,14 +21,14 @@ class DetailBookInfoCell: BaseTableViewCell {
         bookImgV = MakeUIImageViewKit.shared.makeImageView(image: UIImage(), size: CGSize(width: 70, height: 100), addView: self)
         bookImgV.backgroundColor = .brown
         
-        bookTitleLabel = MakeUILabelKit.shared.makeLabel("타이틀 라벨 테스트", size: CGSize(width: 100, height: 20), addView: self)
+        bookTitleLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 20), addView: self)
         bookTitleLabel.numberOfLines = 0
-        MakeUILabelKit.shared.textDecoration(bookTitleLabel, fontSize: 18, fontName: nil, color: .blk333, alignment: .left)
+        MakeUILabelKit.shared.textDecoration(bookTitleLabel, fontSize: 15, fontName: nil, color: .blk333, alignment: .left)
         
-        bookWriterLabel = MakeUILabelKit.shared.makeLabel("작성자 테스트", size: CGSize(width: 100, height: 16), addView: self)
+        bookWriterLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 16), addView: self)
         MakeUILabelKit.shared.textDecoration(bookWriterLabel, fontSize: 12, fontName: nil, color: .blk666, alignment: .left)
         
-        bookInfoLabel = MakeUILabelKit.shared.makeLabel("인포 테스트", size: CGSize(width: 100, height: 16), addView: self)
+        bookInfoLabel = MakeUILabelKit.shared.makeLabel("-", size: CGSize(width: 100, height: 16), addView: self)
         MakeUILabelKit.shared.textDecoration(bookInfoLabel, fontSize: 12, fontName: nil, color: .blk666, alignment: .left)
         
         let grayBorder = MakeUIViewKit.shared.makeBorderView(borderWidth: 100, borderColor: .borderGray, addView: self)
