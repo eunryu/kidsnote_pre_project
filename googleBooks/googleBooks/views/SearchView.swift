@@ -75,6 +75,7 @@ class SearchView: BaseView, UITableViewDelegate, UITableViewDataSource, UITextFi
         contentV.register(SearchListCell.self, forCellReuseIdentifier: "SearchListCell")
         contentV.register(CmmBlankCell.self, forCellReuseIdentifier: "CmmBlankCell")
         contentV.showsVerticalScrollIndicator = false
+        contentV.bounces = false
         contentV.delegate = self
         contentV.dataSource = self
         

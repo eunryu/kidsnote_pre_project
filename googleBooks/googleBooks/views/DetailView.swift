@@ -36,6 +36,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         contentV.register(DetailBookContentCell.self, forCellReuseIdentifier: "DetailBookContentCell")
         contentV.register(DetailStarInfoCell.self, forCellReuseIdentifier: "DetailStarInfoCell")
         contentV.register(DetailCreatorInfoCell.self, forCellReuseIdentifier: "DetailCreatorInfoCell")
+        
         contentV.separatorStyle = .none
         contentV.showsVerticalScrollIndicator = false
         contentV.bounces = false
@@ -96,7 +97,10 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 1 {
             let cell: DetailBtnsCell = tableView.dequeueReusableCell(withIdentifier: "DetailBtnsCell") as! DetailBtnsCell
-            cell.actionMapping(view: self)
+            
+            cell.freeSampleBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showSampleAction(sender: ))))
+            cell.freeSampleBtn.isUserInteractionEnabled = true
+            
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 2 {
@@ -131,7 +135,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
     }
     
     // move safari
-    func showSampleAction() {
+    @objc func showSampleAction(sender: UITapGestureRecognizer) {
         if let showUrl = URL(string: self.bookInfo.sampleUrl) {
             let safariViewController = SFSafariViewController(url: showUrl)
             present(safariViewController, animated: true, completion: nil)
@@ -143,7 +147,7 @@ class DetailView: BaseView, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func showBuyPage() {
+    @objc func showBuyPage(sender: UITapGestureRecognizer) {
         if let open = URL(string: "https://play.google.com/store/books"), UIApplication.shared.canOpenURL(open) {
             UIApplication.shared.open(open)
         }

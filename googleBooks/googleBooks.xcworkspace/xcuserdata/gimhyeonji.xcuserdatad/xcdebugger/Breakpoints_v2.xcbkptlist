@@ -7,62 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91CDF6B7-EFFB-4EB2-A9E3-314315191B2B"
+            uuid = "01074298-E326-4020-8045-47C560B10BC9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "googleBooks/views/DetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "showSampleAction(sender:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "91CDF6B7-EFFB-4EB2-A9E3-314315191B2B - 1e3b342e521afa35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "googleBooks.DetailView.showSampleAction() -&gt; ()"
-                  moduleName = "googleBooks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gimhyeonji/Desktop/Project/kidsnote_pre_project/googleBooks/googleBooks/views/DetailView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135">
-               </Location>
-               <Location
-                  uuid = "91CDF6B7-EFFB-4EB2-A9E3-314315191B2B - 1e3b342e521afa35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "googleBooks.DetailView.showSampleAction() -&gt; ()"
-                  moduleName = "googleBooks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gimhyeonji/Desktop/Project/kidsnote_pre_project/googleBooks/googleBooks/views/DetailView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7CF9EF28-5392-41A1-A548-44ED68FB2DF4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "googleBooks/views/cells/detail/DetailBtnsCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "actionMapping(view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
